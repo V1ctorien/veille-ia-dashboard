@@ -1,0 +1,128 @@
+:root {
+  --fond: #0f1115;
+  --fond-carte: #171a21;
+  --texte: #e6e8eb;
+  --texte-attenue: #9aa1ac;
+  --accent: #5b8def;
+  --bordure: #2a2e37;
+  --ok: #3fb950;
+  --degrade: #d29922;
+  --echec: #f85149;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  padding: 2rem 1.5rem 1.5rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.sous-titre {
+  color: var(--texte-attenue);
+  margin: 0.25rem 0 1rem;
+}
+
+.etat {
+  border: 1px solid var(--bordure);
+  border-left: 4px solid var(--ok);
+  background: var(--fond-carte);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+}
+
+.etat-degrade { border-left-color: var(--degrade); }
+.etat-echec { border-left-color: var(--echec); }
+
+.etat ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
+
+nav {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--bordure);
+  position: sticky;
+  top: 0;
+  background: var(--fond);
+}
+
+nav a {
+  color: var(--texte-attenue);
+  text-decoration: none;
+  padding: 0.75rem 0;
+  font-weight: 600;
+}
+
+nav a:hover { color: var(--accent); }
+
+main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+section { margin-bottom: 3rem; }
+
+section h2 {
+  font-size: 1.4rem;
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: 0.5rem;
+}
+
+section h3 {
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin-top: 1.5rem;
+}
+
+a { color: var(--accent); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+th, td {
+  border: 1px solid var(--bordure);
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+}
+
+th { background: var(--fond-carte); }
+
+footer {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  color: var(--texte-attenue);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--bordure);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --fond: #ffffff;
+    --fond-carte: #f6f8fa;
+    --texte: #1a1f26;
+    --texte-attenue: #57606a;
+    --bordure: #d0d7de;
+  }
+}

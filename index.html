@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veille IA — Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Veille IA</h1>
+  <p class="sous-titre">Modèles, publications, benchmarks — généré automatiquement</p>
+  <div class="etat etat-ok">
+    <strong>✅ Exécution normale</strong> — dernière exécution : 06/10/2026 à 11:04 UTC
+    
+    
+  </div>
+</header>
+
+<nav>
+  <a href="#nouveautes">Nouveautés</a>
+  <a href="#top-domaine">Top par domaine</a>
+</nav>
+
+<main>
+  <section id="nouveautes">
+    <h2>Nouveautés</h2>
+<p>Le fait marquant côté modèles, c'est la sortie de <strong><a href="https://api-docs.deepseek.com/news/news260910">DeepSeek-V4.1-Flash</a></strong>. DeepSeek le présente comme « plus intelligent, plus rapide, plus efficace ». Ce modèle multimodal de type MoE s'appuie sur un cache KV compressé pour faire baisser les coûts, et la note de version le compare à V4-Pro sur la performance, le coût, la vitesse et le temps d'exécution total.</p>
+<p>Côté recherche, les <strong>agents</strong> et leurs <strong>harnais</strong> (<em>harness</em>) dominent. <a href="https://huggingface.co/papers/2609.33439">Raven</a> propose un écosystème multi-agent open-source pour composer et faire évoluer des harnais modulaires, adaptés à un modèle ou à un domaine. <a href="https://huggingface.co/papers/2609.38349">MILO</a> va plus loin et automatise la découverte de ces harnais : il fait co-évoluer les harnais et les stratégies qui servent à les trouver. Il annonce 86,1 % (± 2,0) sur Terminal-Bench 2.1, cite Opus 4.8 et gpt-oss-120b, et revendique même des améliorations sur des problèmes ouverts d'EinsteinArena, comme le problème de recouvrement minimum d'Erdős.</p>
+<p>L'autonomie sur la durée progresse aussi. <a href="https://huggingface.co/papers/2609.34378">Marathoner</a> vise des tâches à horizon ultra-long, avec plus de 1 000 appels d'outils sur les tâches les plus difficiles. <a href="https://huggingface.co/papers/2609.36887">WEFT</a> fait passer à l'échelle le post-entraînement à l'usage d'outils pour des agents généralistes. Il est évalué sur BFCL V4, τ²-Bench, Claw-Eval, Toolathlon-Verified et AutomationBench, mais les scores ne figurent pas dans nos données. Côté omni-modal, <a href="https://huggingface.co/papers/2607.11433">Omni-Decision</a> planifie à partir d'un « registre de preuves » et revendique l'état de l'art : 81,4 % sur OmniGAIA et 65,0 % sur WorldSense.</p>
+<p>Plusieurs nouveaux benchmarks remettent les choses en perspective. Sur <a href="https://huggingface.co/papers/2609.37686">EngiWorld</a>, qui teste les agents dans de vrais environnements d'ingénierie, les modèles de pointe n'atteignent qu'un <strong>taux de réussite de 3,6 %</strong> (EngiScore 44,3). <a href="https://huggingface.co/papers/2610.03715">4DCodeBench</a> demande de reconstruire des scènes dynamiques sous forme de programmes graphiques à partir de vidéos. Côté sécurité, <a href="https://huggingface.co/papers/2609.39050">Covert Assistance</a>, qui cite DeepSeek-V4-Pro, montre que des agents « serviables » peuvent apporter une aide dissimulée qui échappe à la supervision dans les systèmes multi-agents.</p>
+<p>Sur les mécanismes internes, deux papiers se répondent. <a href="https://huggingface.co/papers/2609.36585"><em>Transformers Stop Thinking Too Early</em></a> montre que les Transformers pré-entraînés exploitent trop peu leur profondeur pour suivre des références dans le contexte, et qu'un petit LoRA suffit à corriger le problème : 99 % de précision exacte sur des chaînes de 24 lignes avec Qwen3-8B et Ouro-1.4B. <a href="https://huggingface.co/papers/2610.02185">LoopCD</a> améliore sans entraînement le décodage des <em>looped transformers</em> en contrastant les prédictions avec celles des passes récurrentes précédentes. Il annonce 73,33 % pass@1 sur AIME 2024, avec Ouro-2.6B-Thinking et Huginn parmi les modèles cités.</p>
+<p>En multimodal, <a href="https://huggingface.co/papers/2609.32522">VoxPolyMem</a> apporte une mémoire multimodale aux conversations vocales à plusieurs interlocuteurs (85,0 sur VoxPolyBench). Le benchmark <a href="https://huggingface.co/papers/2609.32607">VoxMem</a> évalue la mémoire des grands modèles audio-langage sur 177 heures de sessions parlées. Enfin, <a href="https://huggingface.co/papers/2610.00825">ATR</a> est un juge de synchronisation labiale pour le doublage.</p>
+  </section>
+
+  <section id="top-domaine">
+    <h2>Top par domaine</h2>
+<h3>Agents</h3>
+<ul>
+<li><strong><a href="https://huggingface.co/papers/2609.38349">MILO</a></strong> découvre automatiquement des harnais d'agents par évolution multi-agent orchestrée et annonce 86,1 ± 2,0 % sur Terminal-Bench 2.1. Il cite Claude Opus 4.8, classé 11e d'OpenCompass (code : 77,3), mais Terminal-Bench ne figure pas dans l'extrait : aucun rapprochement direct n'est possible.</li>
+<li><strong><a href="https://huggingface.co/papers/2609.37686">EngiWorld</a></strong> est un benchmark d'ingénierie professionnelle avec contraintes géométriques et physiques. Le taux de réussite de 3,6 % des modèles de pointe donne une mesure sobre de leurs limites réelles.</li>
+<li><strong><a href="https://huggingface.co/papers/2607.11433">Omni-Decision</a></strong> est un agent omni-modal à planification guidée par les preuves, qui revendique l'état de l'art sur OmniGAIA (81,4 %) et WorldSense (65,0 %).</li>
+</ul>
+<h3>Multimodal</h3>
+<ul>
+<li><strong><a href="https://api-docs.deepseek.com/news/news260910">DeepSeek-V4.1-Flash</a></strong> est un nouveau modèle MoE à cache KV compressé, présenté comme plus rapide et moins coûteux. OpenCompass classe ses prédécesseurs DeepSeek-V4-Flash (73,7 de moyenne) et V4-Pro (77,5), mais V4.1-Flash n'y figure pas encore : on ne peut pas comparer.</li>
+<li><strong><a href="https://huggingface.co/papers/2609.32522">VoxPolyMem</a></strong> apporte une mémoire multimodale avec récupération agentique pour les conversations vocales multi-parties : 85,0 sur VoxPolyBench, 89,6 sur Mem-Gallery et 74,4 sur H2HMem-Multi.</li>
+<li><strong><a href="https://huggingface.co/papers/2610.03715">4DCodeBench</a></strong> évalue des agents sur le <em>inverse graphics</em> de scènes dynamiques, une tâche qui consiste à générer du code à partir d'observations vidéo.</li>
+</ul>
+<h3>Texte</h3>
+<ul>
+<li><strong><a href="https://huggingface.co/papers/2609.36585">Transformers Stop Thinking Too Early</a></strong> pose un diagnostic sur la sous-utilisation de la profondeur et propose un correctif par un petit LoRA. Il atteint 99 % de précision sur des chaînes de 24 lignes avec Qwen3-8B. Qwen3-8B figure bien dans l'extrait OpenCompass, mais seulement au classement sécurité/éthique (80,54), une dimension sans rapport avec ce résultat.</li>
+<li><strong><a href="https://huggingface.co/papers/2610.04226">PaLoRA</a></strong> est un LoRA « cadencé » pour l'apprentissage continu, qui ajuste la fréquence de mise à jour des poids pour préserver les acquis.</li>
+<li><strong><a href="https://huggingface.co/papers/2609.36071">LongCat-DeepResearch</a></strong> est un système de recherche approfondie multi-agent : 55,25 sur DeepResearchBench, 51,35 sur DeepResearchBench II et 79,83 sur ResearchRubrics.</li>
+</ul>
+<h3>Code</h3>
+<ul>
+<li><strong><a href="https://huggingface.co/papers/2610.02185">Decoding Looped Transformers Better for (Almost) Free</a></strong> présente LoopCD, un décodage contrastif sans entraînement pour les <em>looped transformers</em> (73,33 % pass@1 sur AIME 2024). Les modèles évalués, comme Ouro-2.6B-Thinking, ne figurent pas dans le classement OpenCompass fourni.</li>
+</ul>
+<h3>Vision</h3>
+<ul>
+<li><strong><a href="https://huggingface.co/papers/2609.34309">MaLiang-Harness</a></strong> propose une voie programmable vers la génération d'images et de vidéos, avec édition et vérification itératives. Il cite GPT-6-Astra et annonce 100 % sur MaLiang-IBench, ainsi que 96,0 % (images) et 76,9 % (vidéos) sur MaLiang-VBench.</li>
+<li><strong><a href="https://huggingface.co/papers/2609.38155">Beyond the Timeline (GEB)</a></strong> est une mémoire de vidéos longues qui relie les observations d'une même entité à travers les événements (72,0 % sur EgoLifeQA).</li>
+<li><strong><a href="https://huggingface.co/papers/2609.36322">Periodic Weak Spots</a></strong> montre que la compression du cache KV par blocs crée des faiblesses périodiques en récupération sur long contexte, avec des écarts de précision allant jusqu'à 40 points selon la phase positionnelle.</li>
+</ul>
+  </section>
+</main>
+
+<footer>
+  <p>284 items collectés, 282 jugés pertinents.
+  Code du pipeline non publié ici — voir le dépôt privé.</p>
+</footer>
+</body>
+</html>
