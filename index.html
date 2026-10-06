@@ -34,8 +34,30 @@
     
     <details class="nouveaute-entree" open>
       <summary>
-        <span class="nouveaute-date">06/10/2026 à 13:51 UTC</span>
+        <span class="nouveaute-date">06/10/2026 à 14:20 UTC</span>
         <span class="nouveaute-badge">Dernière exécution</span>
+      </summary>
+      <div class="nouveaute-contenu"><p>Cette fois, le flux est dominé par les <strong>agents</strong> et les <strong>modèles de monde vidéo</strong>, avec une forte présence du renforcement (RL) appliqué aux LLM.</p>
+<p><strong>Côté agents et recherche</strong>, <a href="https://huggingface.co/papers/2609.36071">LongCat-DeepResearch</a> combine un modèle LongCat amélioré et un workflow multi-agents pour produire des rapports de recherche détaillés. Il annonce 55,25 sur DeepResearchBench, 51,35 sur DeepResearchBench II et 79,83 sur ResearchRubrics. Sur l'usage d'ordinateur, <a href="https://huggingface.co/papers/2609.38008">HybridCUA</a> apprend à un agent à alterner entre interface graphique et ligne de commande, grâce à des récompenses adaptées au CLI. Les auteurs annoncent +14,8 points sur OSWorld (53,6 %) et +4,0 points sur WindowsAgentArena. Plus conceptuel, <a href="https://huggingface.co/papers/2609.37236">Asking for What Was Never Requested</a> étudie des agents « proactifs », qui vont chercher des informations qu'on ne leur a pas demandées et savent s'arrêter à temps.</p>
+<p><strong>Côté entraînement des LLM</strong>, trois papiers retravaillent la boucle RL :
+- <a href="https://huggingface.co/papers/2609.35954">ROSS</a> réapprend à partir de ses propres rollouts, avec une supervision sélective. Il annonce un passage de 64,20 % à 68,40 % sur SWE-bench Verified.
+- <a href="https://huggingface.co/papers/2609.37868">GRAFT</a> échange des trajectoires entre modèles hétérogènes pour le RLVR. Il annonce 2,1 à 4,5 points de gain en raisonnement mathématique.
+- <a href="https://huggingface.co/papers/2609.36802">EasyPPO</a> défend l'idée que la stabilité du critique est la clé de PPO appliqué aux LLM.</p>
+<p>Dans la même veine, les <a href="https://huggingface.co/papers/2609.37725">Context Language Models</a> gèrent eux-mêmes leur contexte. Les chiffres annoncés, avec Qwen3.5-9B parmi les modèles cités : +11,4 % de précision sur BrowseComp-Plus avec 21,5 % de FLOPs en moins.</p>
+<p><strong>En vidéo et robotique</strong>, les « world models » sont partout :
+- <a href="https://huggingface.co/papers/2609.34606">WorldAttention</a> propose une attention efficace pour les modèles de monde vidéo interactifs (VBench-Long 0,9472, InterVBench 0,9668).
+- <a href="https://huggingface.co/papers/2609.38057">EVO-WAM</a> fait évoluer des modèles vidéo-action à partir de leurs propres trajectoires générées. Les taux de réussite passent de 26,9 % à 68,0 % sur RoboTwin 2.0 et de 20,0 % à 76,7 % sur les tâches composites.
+- <a href="https://huggingface.co/papers/2609.38059">WorldLine</a> simule visuellement la manipulation robotique pour évaluer des politiques.
+- <a href="https://huggingface.co/papers/2609.37969">SoL-Refiner</a> transforme en une seule étape des sorties basse résolution en vidéo 4K.</p>
+<p>Enfin, deux sorties plus « produit » méritent un clic :
+- <a href="https://huggingface.co/papers/2609.37959">TabFM</a>, un modèle de fondation zéro-shot pour données tabulaires, entraîné sur des tables synthétiques. Il se classe premier parmi les modèles de fondation tabulaires par défaut sur TabArena (51 jeux de données).
+- <a href="https://huggingface.co/papers/2609.38157">EmoRES-TTS</a>, qui oriente IndexTTS-2 et CosyVoice2 vers une parole plus expressive.</p></div>
+    </details>
+    
+    <details class="nouveaute-entree" >
+      <summary>
+        <span class="nouveaute-date">06/10/2026 à 13:51 UTC</span>
+        
       </summary>
       <div class="nouveaute-contenu"><p><strong>Mistral et DeepSeek</strong> ouvrent la semaine côté modèles. <a href="https://mistral.ai/news/mistral-large-4/">Mistral Large 4</a> est un modèle multimodal annoncé à 1 trillion de paramètres. Mistral le présente comme performant en code, en workflows agentiques et en compréhension multimodale, au point de dépasser les modèles fermés de pointe dans certains domaines. Il cite DeepSeek-SWE v1.1, Terminal-Bench 4.0 et SWE-Atlas-QnA, mais sans communiquer de scores à ce stade. De son côté, DeepSeek publie <a href="https://api-docs.deepseek.com/news/news260910">DeepSeek-V4.1-Flash</a>, une architecture MoE annoncée plus rapide et plus efficace. Son cache KV compressé doit réduire les coûts, et DeepSeek le compare à V4-Pro sur la performance, le coût, la vitesse et la durée totale d'exécution.</p>
 <p><strong>Les agents dominent les publications du jour.</strong> Deux travaux s'attaquent à la construction automatique de « harnais » (l'outillage autour des modèles) :
@@ -60,37 +82,34 @@
       choix éditorial fait par l'IA pour couvrir la diversité des sujets.
     </p>
     <h2>Top nouveauté par domaine</h2>
-<h3>Agents</h3>
-<ul>
-<li><strong><a href="https://huggingface.co/papers/2609.38349">MILO</a></strong> : découverte automatique de harnais par évolution multi-agent. Il annonce 86,1 ± 2,0 % sur Terminal-Bench 2.1 et des avancées sur des problèmes mathématiques ouverts. Claude Opus 4.8, utilisé dans l'article, figure au classement OpenCompass (11e, moyenne 75,1). Mais OpenCompass ne mesure pas Terminal-Bench, donc aucune comparaison directe n'est possible.</li>
-<li><strong><a href="https://huggingface.co/papers/2609.37686">EngiWorld</a></strong> : un benchmark sévère pour les agents en ingénierie professionnelle, avec seulement 3,6 % de taux de succès pour les modèles de pointe.</li>
-<li><strong><a href="https://huggingface.co/papers/2607.11433">Omni-Decision</a></strong> : un agent omni-modal à planification fondée sur les preuves (81,4 % sur OmniGAIA, 65,0 % sur WorldSense).</li>
-</ul>
-<h3>Multimodal</h3>
-<ul>
-<li><strong><a href="https://mistral.ai/news/mistral-large-4/">Mistral Large 4</a></strong> : un modèle multimodal annoncé à 1T de paramètres, orienté code et agents. Aucun score chiffré n'est publié et il n'apparaît pas dans l'extrait OpenCompass.</li>
-<li><strong><a href="https://api-docs.deepseek.com/news/news260910">DeepSeek-V4.1-Flash</a></strong> : un MoE plus efficace grâce à un cache KV compressé. Son prédécesseur DeepSeek-V4-Flash figure au classement OpenCompass (13e, moyenne 73,7). V4.1-Flash n'y est pas encore évalué et n'annonce pas de score comparable, donc pas de rapprochement possible.</li>
-<li><strong><a href="https://huggingface.co/papers/2609.32522">VoxPolyMem</a></strong> : une mémoire multimodale pour les conversations vocales à plusieurs interlocuteurs (85,0 sur VoxPolyBench, 89,6 sur Mem-Gallery, 74,4 sur H2HMem-Multi).</li>
-</ul>
 <h3>Texte</h3>
 <ul>
-<li><strong><a href="https://huggingface.co/papers/2609.36585">Transformers Stop Thinking Too Early</a></strong> : un petit LoRA suffit à exploiter la profondeur du modèle pour suivre de longues chaînes de références (99 % sur 24 lignes). Qwen3-8B, étudié ici, apparaît dans le classement OpenCompass de sécurité (80,54), mais sur une dimension sans rapport avec ce résultat.</li>
-<li><strong><a href="https://huggingface.co/papers/2609.32722">Scaling Properties of Same-Family On-Policy Distillation</a></strong> : une étude du passage à l'échelle de la distillation on-policy entre modèles d'une même famille.</li>
-<li><strong><a href="https://huggingface.co/papers/2609.37226">Follow the Entities (CorpusMap)</a></strong> : structurer un corpus autour des entités récurrentes améliore la recherche agentique, testé sur 7 modèles.</li>
+<li><a href="https://huggingface.co/papers/2609.35954">ROSS</a> : l'auto-apprentissage sur ses propres rollouts, avec supervision sélective, annonce SWE-bench Verified de 64,20 % à 68,40 % et MOPD de 58,40 % à 62,20 %.</li>
+<li><a href="https://huggingface.co/papers/2609.36071">LongCat-DeepResearch</a> : système de deep research multi-agents, avec des scores annoncés sur DeepResearchBench (55,25), DeepResearchBench II (51,35) et ResearchRubrics (79,83).</li>
+<li><a href="https://huggingface.co/papers/2609.37725">Context Language Models</a> : des modèles qui gèrent leur propre contexte, pour plus de précision à moindre coût (BrowseComp-Plus +11,4 % avec 21,5 % de FLOPs en moins ; EdgeBench +5 % avec 59 % de FLOPs en moins).</li>
 </ul>
-<h3>Code</h3>
+<p><em>Rapprochement avec OpenCompass :</em> aucun. L'extrait fourni ne donne que des scores agrégés (connaissances, raisonnement, maths, code, sécurité) pour des modèles comme Qwen3.8-Max ou Qwen3-8B/14B. Ni Qwen3.5-9B ni les benchmarks cités ici n'y figurent.</p>
+<h3>Agents</h3>
 <ul>
-<li><strong><a href="https://huggingface.co/papers/2610.02185">Decoding Looped Transformers Better for (Almost) Free</a></strong> : LoopCD guide le décodage par contraste avec les passes récurrentes précédentes, sans entraînement (73,33 % pass@1 sur AIME 2024). Ni Ouro ni Huginn ne figurent dans l'extrait OpenCompass.</li>
+<li><a href="https://huggingface.co/papers/2609.38008">HybridCUA</a> : orchestration GUI + CLI pour les agents d'usage d'ordinateur. Les auteurs annoncent +14,8 points sur OSWorld (53,6 %) et +4,0 points sur WindowsAgentArena.</li>
+<li><a href="https://huggingface.co/papers/2609.37868">GRAFT (Cross-Model Trajectory Exchange)</a> : remplace les groupes d'échec du RLVR par des trajectoires issues d'autres modèles, pour 2,1 à 4,5 points de gain en raisonnement mathématique.</li>
+<li><a href="https://huggingface.co/papers/2609.38087">CrossBFM</a> : un espace comportemental partagé entre plusieurs robots humanoïdes, avec un seul encodeur. Le transfert fonctionne sur les 41 prompts de récompense testés.</li>
 </ul>
 <h3>Vision</h3>
 <ul>
-<li><strong><a href="https://huggingface.co/KBlueLeaf/TTVidT">TT-VidT</a></strong> (NeurIPS 2026) : un pré-entraînement vidéo qui découple l'axe temporel. Il est évalué sur HMDB51 (25,2), Jester (72,9) et Something-Something v2 (25,4), entre autres (top-1, moyenne sur 3 seeds).</li>
-<li><strong><a href="https://huggingface.co/papers/2609.34309">MaLiang-Harness</a></strong> : génération programmable d'images et de vidéos avec édition et vérification. Il annonce 96,0 % (images) et 76,9 % (vidéos) sur MaLiang-VBench, en s'appuyant sur GPT-6-Astra.</li>
-<li><strong><a href="https://huggingface.co/papers/2609.38155">Beyond the Timeline (GEB)</a></strong> : une mémoire de vidéos longues fondée sur des « biographies » d'entités (72,0 % sur EgoLifeQA).</li>
+<li><a href="https://huggingface.co/papers/2609.38057">EVO-WAM</a> : modèles vidéo-action auto-améliorés, avec des gains marqués sur RoboTwin 2.0 (de 26,9 % à 68,0 %) et sur DreamZero (de 28,5 % à 46,4 %).</li>
+<li><a href="https://huggingface.co/papers/2609.34606">WorldAttention</a> : architecture d'attention efficace pour les modèles de monde vidéo interactifs (VBench-Long 0,9472).</li>
+<li><a href="https://huggingface.co/papers/2609.37775">HiRAE</a> : auto-encodeur hiérarchique de représentations. Le FID passe de 0,299 à 0,209 et GenEval de 84,86 à 87,70.</li>
 </ul>
-<h3>Benchmarks</h3>
+<h3>Multimodal</h3>
 <ul>
-<li><strong><a href="https://arena.ai/leaderboard/text-to-video">Text-to-Video Arena (LMArena)</a></strong> : gemini-omni-1.1-flash (1516 ± 15) et gemini-omni-flash (1513 ± 9) sont en tête, à égalité statistique. L'extrait OpenCompass ne couvre que les LLM, donc aucun rapprochement n'est possible.</li>
+<li><a href="https://huggingface.co/papers/2609.37959">TabFM</a> : modèle de fondation zéro-shot pour données tabulaires, classé premier parmi les modèles par défaut sur TabArena (51 jeux de données).</li>
+<li><a href="https://huggingface.co/papers/2609.37441">AnisoWM</a> : une régularisation anisotrope des représentations latentes pour mieux planifier dans les world models JEPA.</li>
+<li><a href="https://huggingface.co/papers/2609.38360">On the Off-Policy Teacher in On-Policy Distillation</a> : un cadre où l'enseignant supervise des préfixes générés par l'étudiant.</li>
+</ul>
+<h3>Audio</h3>
+<ul>
+<li><a href="https://huggingface.co/papers/2609.38157">EmoRES-TTS</a> : orientation vectorielle résiduelle pour une synthèse vocale émotionnelle contrôlable, appliquée à IndexTTS-2 et CosyVoice2. Les auteurs rapportent sur IEMOCAP des chiffres de corrélation de rang de 26,13 % (IndexTTS-2) et 12,97 % (CosyVoice2).</li>
 </ul>
   </section>
 
@@ -389,6 +408,69 @@
         </tr>
         
         <tr class="statut-essai">
+          <td><a href="https://sqmagazine.co.uk/ai-agent-autonomy-statistics/" target="_blank" rel="noopener">AI Agent Autonomy Statistics 2026: Levels & Benchmarks</a></td>
+          <td>publications</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://codersera.com/blog/ai-agent-benchmarks-state-of-leaderboard-may-2026/" target="_blank" rel="noopener">AI Agent Benchmarks 2026: Who Leads SWE-bench & GAIA</a></td>
+          <td>communautaire</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://presenc.ai/research/ai-agent-capability-benchmarks-2026" target="_blank" rel="noopener">AI Agent Capability Benchmarks 2026 - Presenc AI</a></td>
+          <td>benchmarks</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://capitalandcompute.net/ai-models/" target="_blank" rel="noopener">AI Model Release Timeline 2026: 48 Models Tracked</a></td>
+          <td>benchmarks</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://aireleasetracker.com/" target="_blank" rel="noopener">AI Release Tracker — AI Model Release Timeline</a></td>
+          <td>benchmarks</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://agentreviews.dev/blog/ai-agent-benchmarks-2026-production-readiness/" target="_blank" rel="noopener">Agent Reviews</a></td>
+          <td>communautaire</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://benchlm.ai/" target="_blank" rel="noopener">BenchLM</a></td>
+          <td>benchmarks</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://radarai.top/en/topics/china-ai-model-release-tracker" target="_blank" rel="noopener">China AI model release tracker</a></td>
+          <td>communautaire</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://chinaapi.ai/model-updates/" target="_blank" rel="noopener">China API</a></td>
+          <td>communautaire</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
           <td><a href="https://www.codesota.com/papers-with-code/trending" target="_blank" rel="noopener">Codesota – Papers with Code Trending</a></td>
           <td>publications</td>
           <td>en</td>
@@ -399,6 +481,27 @@
           <td><a href="https://www.datalearner.com/leaderboards" target="_blank" rel="noopener">DataLearner Leaderboards</a></td>
           <td>benchmarks</td>
           <td>zh</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://decodethefuture.org/en/ai-agent-benchmarks-2026/" target="_blank" rel="noopener">Decodethefuture</a></td>
+          <td>communautaire</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://www.discourse.org/open-source" target="_blank" rel="noopener">Discourse</a></td>
+          <td>communautaire</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://discuss.huggingface.co/t/open-source-llms-your-experience-and-recommendation/62598" target="_blank" rel="noopener">Discuss - Hugging Face</a></td>
+          <td>communautaire</td>
+          <td>en</td>
           <td><span class="badge-statut badge-essai">essai</span></td>
         </tr>
         
@@ -417,6 +520,27 @@
         </tr>
         
         <tr class="statut-essai">
+          <td><a href="https://llm-stats.com/leaderboards/llm-leaderboard" target="_blank" rel="noopener">LLM Leaderboard</a></td>
+          <td>benchmarks</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://lmmarketcap.com/" target="_blank" rel="noopener">LLM Market Cap</a></td>
+          <td>benchmarks</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://iternal.ai/llm-benchmark-repository" target="_blank" rel="noopener">LMArena</a></td>
+          <td>benchmarks</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
           <td><a href="https://lastweekin.ai/" target="_blank" rel="noopener">Last Week in AI</a></td>
           <td>agregateur_reference</td>
           <td>en</td>
@@ -426,6 +550,20 @@
         <tr class="statut-essai">
           <td><a href="https://livebench.ai" target="_blank" rel="noopener">LiveBench</a></td>
           <td>benchmarks</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://nazarbanai.com/benchmark" target="_blank" rel="noopener">Nazarban</a></td>
+          <td>benchmarks</td>
+          <td>anglais</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://www.facebook.com/groups/opensourcellms/" target="_blank" rel="noopener">Open Source Generative AI & LLMs (Large Language Models) Discussion Forum</a></td>
+          <td>communautaire</td>
           <td>en</td>
           <td><span class="badge-statut badge-essai">essai</span></td>
         </tr>
@@ -468,6 +606,34 @@
         <tr class="statut-essai">
           <td><a href="https://www.deeplearning.ai/the-batch/" target="_blank" rel="noopener">The Batch (DeepLearning.AI)</a></td>
           <td>agregateur_reference</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://toolpix.pythonanywhere.com/blog/ai-model-releases-tracker-2026" target="_blank" rel="noopener">ToolPix</a></td>
+          <td>publications</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://news.tunx.ai/ai-lab-model-releases-frontier-company-news-live-tracker-2026/" target="_blank" rel="noopener">Tunx AI</a></td>
+          <td>publications</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://www.csis.org/analysis/what-know-about-chinese-ai-models" target="_blank" rel="noopener">What to Know About Chinese AI Models - CSIS</a></td>
+          <td>publications</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://anhtu.dev/ai-agent-benchmarks-2026-swe-bench-gaia-osworld-measure-true-capability-2249" target="_blank" rel="noopener">anhtu.dev</a></td>
+          <td>communautaire</td>
           <td>en</td>
           <td><span class="badge-statut badge-essai">essai</span></td>
         </tr>
