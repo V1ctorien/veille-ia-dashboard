@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="entete-fixe">
 <header>
   <h1>Veille IA</h1>
   <p class="sous-titre">Modèles, publications, benchmarks — généré automatiquement</p>
@@ -23,7 +24,9 @@
   <a href="#benchmarks">Benchmarks</a>
   <a href="#open-source">Open source</a>
   <a href="#model-review">Model Review</a>
+  <a href="#sources">Sources</a>
 </nav>
+</div>
 
 <main>
   <section id="nouveautes">
@@ -194,6 +197,304 @@
       <select id="select-model-review"><option value="">Toutes</option></select>
     </label>
     <div id="model-review-liste" class="model-review-liste"></div>
+  </section>
+
+  <section id="sources">
+    <h2>Sources</h2>
+    <p class="benchmark-explication">
+      Toutes les sources suivies par le pipeline. <strong>active</strong> : collectée en continu.
+      <strong>essai</strong> : candidate récemment admise, en période d'observation avant promotion ou
+      exclusion automatique (voir méta-veille, C7). <strong>désactivée</strong> : écartée après la
+      période d'essai faute d'avoir produit du contenu pertinent.
+    </p>
+    <table class="table-sources">
+      <thead>
+        <tr><th>Source</th><th>Type</th><th>Langue</th><th>Statut</th></tr>
+      </thead>
+      <tbody>
+        
+        <tr class="statut-active">
+          <td><a href="https://news.smol.ai" target="_blank" rel="noopener">AINews (smol.ai)</a></td>
+          <td>agregateur_reference</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://www.anthropic.com/news" target="_blank" rel="noopener">Anthropic News</a></td>
+          <td>publications</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://artificialanalysis.ai" target="_blank" rel="noopener">Artificial Analysis</a></td>
+          <td>benchmarks</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://api-docs.deepseek.com/updates/" target="_blank" rel="noopener">DeepSeek API Docs — News</a></td>
+          <td>publications</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://epoch.ai" target="_blank" rel="noopener">Epoch AI Benchmarking Hub</a></td>
+          <td>benchmarks</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td>GitHub releases des labos</td>
+          <td>sorties_modeles</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://deepmind.google/discover/blog/" target="_blank" rel="noopener">Google DeepMind Blog</a></td>
+          <td>publications</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://huggingface.co/papers" target="_blank" rel="noopener">Hugging Face Daily Papers</a></td>
+          <td>publications</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://huggingface.co/models" target="_blank" rel="noopener">Hugging Face Hub (trending + organisations)</a></td>
+          <td>sorties_modeles</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://www.interconnects.ai" target="_blank" rel="noopener">Interconnects</a></td>
+          <td>agregateur_reference</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://lmarena.ai" target="_blank" rel="noopener">LMArena</a></td>
+          <td>benchmarks</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://ai.meta.com/blog/" target="_blank" rel="noopener">Meta AI Blog</a></td>
+          <td>publications</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://www.minimax.io/news" target="_blank" rel="noopener">MiniMax News</a></td>
+          <td>publications</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://mistral.ai/news" target="_blank" rel="noopener">Mistral AI News</a></td>
+          <td>publications</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://modelscope.cn" target="_blank" rel="noopener">ModelScope</a></td>
+          <td>sorties_modeles</td>
+          <td>zh</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://platform.kimi.ai/blog" target="_blank" rel="noopener">Moonshot AI / Kimi Blog</a></td>
+          <td>publications</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://openai.com/news/" target="_blank" rel="noopener">OpenAI News</a></td>
+          <td>publications</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://opencompass.org.cn" target="_blank" rel="noopener">OpenCompass</a></td>
+          <td>benchmarks</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://qwenlm.github.io/blog/" target="_blank" rel="noopener">Qwen Blog</a></td>
+          <td>publications</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://www.semanticscholar.org" target="_blank" rel="noopener">Semantic Scholar</a></td>
+          <td>publications</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://zhipuai.cn/en" target="_blank" rel="noopener">Zhipu / Z.ai</a></td>
+          <td>publications</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://alphaxiv.org" target="_blank" rel="noopener">alphaXiv</a></td>
+          <td>publications</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://arxiv.org" target="_blank" rel="noopener">arXiv (cs.CL, cs.LG, cs.AI)</a></td>
+          <td>publications</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://reddit.com/r/LocalLLaMA" target="_blank" rel="noopener">r/LocalLLaMA</a></td>
+          <td>communautaire</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-active">
+          <td><a href="https://reddit.com/r/MachineLearning" target="_blank" rel="noopener">r/MachineLearning</a></td>
+          <td>communautaire</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-active">active</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://www.codesota.com/papers-with-code/trending" target="_blank" rel="noopener">Codesota – Papers with Code Trending</a></td>
+          <td>publications</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://www.datalearner.com/leaderboards" target="_blank" rel="noopener">DataLearner Leaderboards</a></td>
+          <td>benchmarks</td>
+          <td>zh</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://news.ycombinator.com/" target="_blank" rel="noopener">Hacker News</a></td>
+          <td>communautaire</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://importai.substack.com" target="_blank" rel="noopener">Import AI (Jack Clark)</a></td>
+          <td>agregateur_reference</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://lastweekin.ai/" target="_blank" rel="noopener">Last Week in AI</a></td>
+          <td>agregateur_reference</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://livebench.ai" target="_blank" rel="noopener">LiveBench</a></td>
+          <td>benchmarks</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://openclawforum.org/" target="_blank" rel="noopener">OpenClaw Forum - AI Agent Community Discussion Platform</a></td>
+          <td>communautaire</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://qwen.ai/blog" target="_blank" rel="noopener">Qwen Blog</a></td>
+          <td>sorties_modeles</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://scale.com/leaderboard" target="_blank" rel="noopener">Scale AI SEAL Leaderboards</a></td>
+          <td>benchmarks</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://simonwillison.net/" target="_blank" rel="noopener">Simon Willison's Weblog</a></td>
+          <td>agregateur_reference</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://www.superclueai.com/" target="_blank" rel="noopener">SuperCLUE</a></td>
+          <td>benchmarks</td>
+          <td>zh</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://www.deeplearning.ai/the-batch/" target="_blank" rel="noopener">The Batch (DeepLearning.AI)</a></td>
+          <td>agregateur_reference</td>
+          <td>en</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://github.com/jeinlee1991/chinese-llm-benchmark/blob/main/leaderboard/total.md" target="_blank" rel="noopener">chinese-llm-benchmark</a></td>
+          <td>benchmarks</td>
+          <td>zh</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://www.jiqizhixin.com/" target="_blank" rel="noopener">机器之心 (Jiqizhixin)</a></td>
+          <td>sorties_modeles</td>
+          <td>zh</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+        <tr class="statut-essai">
+          <td><a href="https://www.qbitai.com/" target="_blank" rel="noopener">量子位 (QbitAI)</a></td>
+          <td>sorties_modeles</td>
+          <td>zh</td>
+          <td><span class="badge-statut badge-essai">essai</span></td>
+        </tr>
+        
+      </tbody>
+    </table>
   </section>
 </main>
 

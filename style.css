@@ -32,8 +32,16 @@ body {
   line-height: 1.6;
 }
 
+.entete-fixe {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--fond);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
 header {
-  padding: 2rem 1.5rem 1.5rem;
+  padding: 1.25rem 1.5rem 1rem;
   max-width: 860px;
   margin: 0 auto;
 }
@@ -68,10 +76,8 @@ nav {
   padding: 0 1.5rem;
   display: flex;
   gap: 1.5rem;
+  flex-wrap: wrap;
   border-bottom: 1px solid var(--bordure);
-  position: sticky;
-  top: 0;
-  background: var(--fond);
 }
 
 nav a {
@@ -321,6 +327,38 @@ footer {
   padding-top: 0.5rem;
   margin-top: 0.75rem;
 }
+
+.table-sources {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table-sources th {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--bordure);
+  color: var(--texte-attenue);
+}
+
+.table-sources td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--bordure);
+}
+
+.badge-statut {
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-active { background: rgba(63, 185, 80, 0.15); color: var(--ok); }
+.badge-essai { background: rgba(210, 153, 34, 0.15); color: var(--degrade); }
+.badge-désactivée { background: rgba(248, 81, 73, 0.15); color: var(--echec); }
+
+tr.statut-désactivée { opacity: 0.55; }
 
 .benchmark-carte canvas { max-height: 420px; }
 
