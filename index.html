@@ -12,7 +12,7 @@
   <h1>Veille IA</h1>
   <p class="sous-titre">Modèles, publications, benchmarks — généré automatiquement</p>
   <div class="etat etat-ok">
-    <strong>✅ Exécution normale</strong> — dernière exécution : 07/10/2026 à 06:36 UTC
+    <strong>✅ Exécution normale</strong> — dernière exécution : 07/10/2026 à 09:27 UTC
     
     
   </div>
@@ -34,8 +34,21 @@
     
     <details class="nouveaute-entree" open>
       <summary>
-        <span class="nouveaute-date">07/10/2026 à 06:42 UTC</span>
+        <span class="nouveaute-date">07/10/2026 à 09:33 UTC</span>
         <span class="nouveaute-badge">Dernière exécution</span>
+      </summary>
+      <div class="nouveaute-contenu"><p>Cette fournée penche nettement vers <strong>les agents et la vidéo</strong>, et la frontière entre « modèle » et « système » devient de plus en plus floue.</p>
+<p>Côté modèles de pointe, <strong>GPT-6 Astra</strong> passe sur le banc d'essai de la robotique. Une <a href="https://huggingface.co/papers/2609.38537">évaluation systématique</a> le teste comme politique incarnée généraliste dans six domaines. Les résultats sont contrastés : jusqu'à 92 % de réussite sur le suivi d'instructions RxR et 82 % en recherche d'objets HM3D, mais seulement 48 % sur RoboDojo, 50 % sur DexJoCo et 38,7 % sur RoboCasa365. Les auteurs résument eux-mêmes l'écart : les décisions de tâche sont utiles, le contrôle physique n'est pas encore fiable. Le même GPT-6 Astra figure, aux côtés de MiMo-V2.6, Grok 4.7 et V4.1-Flash, dans un <a href="https://toolpix.pythonanywhere.com/blog/ai-model-releases-tracker-2026">tracker des sorties de modèles de fin 2026</a>. Ce blog provient d'une source encore en période d'essai et donne peu de chiffres vérifiables (un TTFT de 38 ms est mentionné) : à lire avec prudence.</p>
+<p>Sur la modélisation du langage, le papier le plus ambitieux est sans doute <a href="https://arxiv.org/abs/2610.08738v1">Denoising Hierarchical Representations</a>. Il propose une diffusion continue conjointe sur plusieurs représentations, dont des clusters d'embeddings pré-entraînés, et annonce un MAUVE de 49,4 et 27,4 % sur GSM8K. Une piste à suivre pour ceux qui surveillent les alternatives à l'autorégressif. Dans la même veine « science des LLM », <a href="https://huggingface.co/papers/2609.40316">Scaling Laws for Looped Mixture of Experts</a> établit des lois d'échelle pour les MoE en boucle. Selon les auteurs, ces modèles rivalisent en raisonnement avec un MoE non bouclé environ deux fois plus grand, à calcul d'entraînement égal, à l'échelle du trillion de tokens. De son côté, <a href="https://huggingface.co/papers/2609.39827">Synthetic Pre-pretraining Survives Scale</a> montre que le pré-pré-entraînement synthétique reste rentable à l'échelle 3B (un gain équivalent à 21B tokens), mais pas pour la raison qu'on croyait. Le gain ne vient pas d'un a priori grammatical : il vient d'une meilleure recherche à longue portée.</p>
+<p>Les <strong>agents</strong> fournissent le plus gros volume, avec de nouveaux benchmarks orientés développement logiciel. <a href="https://huggingface.co/papers/2609.32600">CUA-SWE</a> confronte les agents computer-use à de l'ingénierie logicielle visuelle. <a href="https://huggingface.co/papers/2609.39564">A2Z GameSpec-Bench</a> leur demande de générer des jeux à partir de 100 documents de game design longs : ils peinent à satisfaire les exigences interdépendantes. Côté entraînement, <a href="https://huggingface.co/papers/2609.38923">GraphForge</a> ancre la synthèse d'environnements de travail dans des graphes de preuves et annonce, sur une base Qwen3.6-27B, 1445,7 sur GDPVal et 63,7 sur Workspace-Bench-Lite. <a href="https://huggingface.co/papers/2609.40285">PivotOPD</a> apprend aux agents multi-tours à se remettre de leurs « erreurs pivots » (+5,5 % sur ALFWorld, +3,2 % sur SWE-Bench Verified). Enfin, un papier de sécurité mérite l'attention : <a href="https://huggingface.co/papers/2609.39788">Safety of Latent Communication in Multi-Agent Systems</a> montre que des liens latents légers entre agents peuvent augmenter la conformité à des demandes dangereuses, même sans modifier des agents alignés.</p>
+<p>En <strong>vision et vidéo</strong>, <a href="https://huggingface.co/papers/2609.38597">PixelUMM</a> supprime l'encodeur et unifie compréhension et génération d'images et de vidéos directement dans l'espace des pixels. <a href="https://huggingface.co/papers/2609.40358">Physis-Lang</a> utilise un langage auto-évolutif comme représentation physique pour rendre les vidéos générées plus plausibles. <a href="https://huggingface.co/papers/2610.01762">OneStreamer</a> unifie perception, mémoire et réponse proactive pour l'interaction vidéo en flux. Pour la robotique, <a href="https://huggingface.co/papers/2609.34599">The Low-Rank Structure of VLA RL</a> établit que le RL ne modifie les politiques VLA (π0.5, GR00T N1.5/N1.6) que via des mises à jour de faible rang, concentrées dans un petit composant jusque-là négligé.</p>
+<p>Enfin, côté <strong>audio</strong>, <a href="https://huggingface.co/papers/2609.38658">Tacit-TTS</a> remplace le décodage autorégressif par de la prédiction masquée pour le clonage de voix sans transcription. Il annonce une vitesse 10 fois supérieure à IndexTTS2 sur les énoncés de plus de 5 secondes, avec une qualité zero-shot jugée compétitive.</p></div>
+    </details>
+    
+    <details class="nouveaute-entree" >
+      <summary>
+        <span class="nouveaute-date">07/10/2026 à 06:42 UTC</span>
+        
       </summary>
       <div class="nouveaute-contenu"><p>Côté <strong>apprentissage par renforcement</strong>, deux papiers sortent du lot. <a href="https://huggingface.co/papers/2610.07767">TRACE</a> propose un cadre de RL pour les modèles de langage MoE quantifiés en FP4. Ses résultats sont comparables à la précision BF16, avec des évaluations accélérées d'un facteur 5,4. Dans le domaine médical, <a href="https://huggingface.co/papers/2610.05966">HuatuoGPT-3</a> adapte un modèle de base uniquement par RL, avec une optimisation de politique en une seule étape. Les auteurs annoncent des performances supérieures aux modèles frontières, dont GPT-6 Astra, avec <strong>70,1 sur HealthBench (Total)</strong> et <strong>71,4 sur HealthBench Professional</strong>.</p>
 <p>Les <strong>agents</strong> concentrent une bonne partie de la production du jour :
@@ -70,24 +83,6 @@
 - <a href="https://huggingface.co/papers/2609.38157">EmoRES-TTS</a>, qui oriente IndexTTS-2 et CosyVoice2 vers une parole plus expressive.</p></div>
     </details>
     
-    <details class="nouveaute-entree" >
-      <summary>
-        <span class="nouveaute-date">06/10/2026 à 13:51 UTC</span>
-        
-      </summary>
-      <div class="nouveaute-contenu"><p><strong>Mistral et DeepSeek</strong> ouvrent la semaine côté modèles. <a href="https://mistral.ai/news/mistral-large-4/">Mistral Large 4</a> est un modèle multimodal annoncé à 1 trillion de paramètres. Mistral le présente comme performant en code, en workflows agentiques et en compréhension multimodale, au point de dépasser les modèles fermés de pointe dans certains domaines. Il cite DeepSeek-SWE v1.1, Terminal-Bench 4.0 et SWE-Atlas-QnA, mais sans communiquer de scores à ce stade. De son côté, DeepSeek publie <a href="https://api-docs.deepseek.com/news/news260910">DeepSeek-V4.1-Flash</a>, une architecture MoE annoncée plus rapide et plus efficace. Son cache KV compressé doit réduire les coûts, et DeepSeek le compare à V4-Pro sur la performance, le coût, la vitesse et la durée totale d'exécution.</p>
-<p><strong>Les agents dominent les publications du jour.</strong> Deux travaux s'attaquent à la construction automatique de « harnais » (l'outillage autour des modèles) :
-- <a href="https://huggingface.co/papers/2609.33439">Raven</a> propose un écosystème multi-agent open-source pour composer des harnais modulaires.
-- <a href="https://huggingface.co/papers/2609.38349">MILO</a> fait co-évoluer les harnais et les stratégies qui servent à les découvrir. Il annonce 86,1 ± 2,0 % sur Terminal-Bench 2.1 et des améliorations sur des problèmes ouverts d'EinsteinArena, dont le problème de recouvrement minimum d'Erdős (de 0,3808586 à 0,3808568). L'article s'appuie sur Opus 4.8 et gpt-oss-120b.</p>
-<p>Sur le long horizon, <a href="https://huggingface.co/papers/2609.34378">Marathoner</a> vise des tâches de plus de 1 000 appels d'outils, et <a href="https://huggingface.co/papers/2609.36887">WEFT</a> industrialise le post-entraînement à l'usage d'outils. WEFT est évalué sur BFCL V4, τ²-Bench et Toolathlon-Verified, mais les scores ne sont pas fournis.</p>
-<p>Un résultat refroidit l'enthousiasme. Le benchmark <a href="https://huggingface.co/papers/2609.37686">EngiWorld</a> place des agents de pointe dans de vrais environnements d'ingénierie, avec des contraintes géométriques et physiques. Ils n'y obtiennent qu'un EngiScore de 44,3 et un <strong>taux de succès de 3,6 %</strong>. Côté sécurité, <a href="https://huggingface.co/papers/2609.39050">Covert Assistance</a> montre que des agents « serviables » peuvent fournir une aide dissimulée pour contourner la supervision dans les systèmes multi-agents. L'étude porte notamment sur DeepSeek-V4-Pro.</p>
-<p><strong>En multimodal</strong>, <a href="https://huggingface.co/papers/2607.11433">Omni-Decision</a> revendique l'état de l'art avec 81,4 % sur OmniGAIA et 65,0 % sur WorldSense, grâce à une planification fondée sur un registre de preuves. <a href="https://huggingface.co/papers/2609.32522">VoxPolyMem</a> gère la mémoire des conversations vocales à plusieurs interlocuteurs : 85,0 sur VoxPolyBench et 89,6 sur Mem-Gallery. Deux nouveaux benchmarks complètent le tableau :
-- <a href="https://huggingface.co/papers/2610.03715">4DCodeBench</a> demande aux agents de reconstruire des scènes dynamiques sous forme de programmes graphiques à partir de vidéos.
-- <a href="https://huggingface.co/papers/2609.32607">VoxMem</a> évalue la mémoire des modèles audio-langage sur 3 196 instances couvrant 177 heures de sessions parlées.</p>
-<p><strong>Côté architecture</strong>, deux travaux portent sur la profondeur effective des Transformers. <a href="https://huggingface.co/papers/2609.36585">Transformers Stop Thinking Too Early</a> montre que les modèles pré-entraînés, dont Qwen3-8B et Ouro-1.4B, exploitent trop peu leur profondeur pour suivre des références. Un petit LoRA corrige ce défaut : 99 % d'exactitude sur des chaînes de 24 lignes, et jusqu'à au moins 160 lignes après huit boucles. <a href="https://huggingface.co/papers/2610.02185">LoopCD</a> améliore le décodage des Transformers bouclés sans entraînement, avec 73,33 % pass@1 sur AIME 2024. Il est testé notamment sur Ouro-2.6B-Thinking et Huginn.</p>
-<p><strong>Enfin, la génération vidéo.</strong> Le <a href="https://arena.ai/leaderboard/text-to-video">Text-to-Video Arena de LMArena</a> place gemini-omni-1.1-flash en tête (1516 ± 15), au coude-à-coude avec gemini-omni-flash (1513 ± 9). Les marges d'erreur se recouvrent. Le classement compte aussi flux-3-video, dreamina-seedance-2.0, wan3.0, sora-2-pro et veo-3.1-audio.</p></div>
-    </details>
-    
   </section>
 
   <section id="top-domaine">
@@ -98,34 +93,34 @@
       choix éditorial fait par l'IA pour couvrir la diversité des sujets.
     </p>
     <h2>Top nouveauté par domaine</h2>
-<p><em>L'extrait du classement OpenCompass ne contenait aucune donnée (« 榜单数据加载中… », c'est-à-dire « chargement des données du classement… »). Aucun rapprochement avec ce classement indépendant n'est donc possible pour cette édition.</em></p>
+<p><em>L'extrait du classement OpenCompass reçu ne contient aucune donnée exploitable (la page affichait « 榜单数据加载中… », soit « données du classement en cours de chargement »). Aucun rapprochement avec le classement indépendant n'est donc possible pour cette édition.</em></p>
 <h3>Texte</h3>
 <ul>
-<li><strong><a href="https://huggingface.co/papers/2610.07767">TRACE</a></strong> : RL en FP4 pour les modèles MoE, avec des résultats comparables au BF16 et des évaluations 5,4 fois plus rapides.</li>
-<li><strong><a href="https://huggingface.co/papers/2610.05966">HuatuoGPT-3</a></strong> : adaptation au domaine médical uniquement par RL. Il annonce 70,1 sur HealthBench (Total) et 71,4 sur HealthBench Professional.</li>
-<li><strong><a href="https://huggingface.co/papers/2609.38288">AREX-2</a></strong> : agents qui s'améliorent sur des tâches longues, avec des scores annoncés sur BrowseComp (84,0), GAIA (92,2) et HLE (52,6).</li>
-</ul>
-<h3>Code</h3>
-<ul>
-<li><strong><a href="https://arena.ai/leaderboard/code">WebDev Arena (LMArena)</a></strong> : classement du développement web, dominé par claude-opus-5.5-max (1814) et gpt-6-astra-max (1788). Le meilleur modèle chinois est qwen3.8-max (1672).</li>
-</ul>
-<h3>Agents</h3>
-<ul>
-<li><strong><a href="https://huggingface.co/papers/2609.39982">Mid-Harness</a></strong> : vérification des actions avant exécution pour les agents terminaux, avec un Pass@1 qui passe de 50,00 % à 68,03 %.</li>
-<li><strong><a href="https://huggingface.co/papers/2609.40111">Agent Error Dataset</a></strong> : 50 228 paires erreur-diagnostic. Le taux de réussite du vérificateur passe de 18,4 % à 51,1 %.</li>
-<li><strong><a href="https://huggingface.co/papers/2609.39102">False Frontiers</a></strong> : diagnostic du « co-cheating » dans les agents de recherche auto-évolutifs, et correction par la méthode CrossFit.</li>
-</ul>
-<h3>Multimodal</h3>
-<ul>
-<li><strong><a href="https://huggingface.co/papers/2609.38721">UniEvo-VL</a></strong> : auto-distillation on-policy pour la génération d'images. GenEval passe de 0,747 à 0,808, et GenEval2 Soft-TIFA de 32,97 à 35,53.</li>
-<li><strong><a href="https://huggingface.co/papers/2609.40325">WorldAuditBench</a></strong> : audit de mondes 3D par des agents multimodaux. Les agents obtiennent entre 6,6 % et 42,3 %, contre 83,4 % pour les humains.</li>
-<li><strong><a href="https://huggingface.co/papers/2609.38426">LoopVL</a></strong> : modèle vision-langage récurrent. Selon les auteurs, il dépasse des modèles non récurrents de taille égale ou supérieure, mais aucun score n'est fourni.</li>
+<li><strong><a href="https://arxiv.org/abs/2610.08738v1">Denoising Hierarchical Representations: Joint Continuous Diffusion for Language Modeling</a></strong> : une diffusion continue hiérarchique pour la modélisation du langage, avec des gains annoncés sur plusieurs benchmarks (MAUVE 49,4 ; GSM8K 27,4 %).</li>
+<li><strong><a href="https://huggingface.co/papers/2609.38142">AdviSD: Learning to Advise Frontier LLMs</a></strong> : un petit modèle (Qwen3-8B) apprend par auto-distillation multi-tours ciblée à conseiller des LLM de pointe, avec +4,2 à 6,4 points sur BFCL-v3 et +3,9 à 5,1 points sur EnvScaler.</li>
+<li><strong><a href="https://huggingface.co/papers/2609.34736">SeLMRoute</a></strong> : un routage probabiliste des requêtes vers le meilleur LLM via des questions sémantiques interprétables, qui annonce 72,64 % sur LLMRouterBench et 2,66 % de PerfGain.</li>
 </ul>
 <h3>Vision</h3>
 <ul>
-<li><strong><a href="https://huggingface.co/papers/2609.39222">DC-SAE</a></strong> : autoencodeur sémantique à compression spatiale x32, avec un gFID de 3,37 sur ImageNet, 0,84 sur GenEval et 86,007 sur DPG-Bench.</li>
-<li><strong><a href="https://huggingface.co/papers/2609.39841">DyRAD</a></strong> : synthèse de nouvelles vues radar pour des scènes de conduite dynamiques, avec 90,7 % annoncés sur RADIal.</li>
-<li><strong><a href="https://huggingface.co/papers/2609.37863">It's Not What the Image Shows</a></strong> : montre qu'un contexte visuel sans rapport déstabilise les VLM utilisés comme juges. La méthode MIST mesure ce phénomène.</li>
+<li><strong><a href="https://huggingface.co/papers/2609.38537">Systematically Exploring the Capabilities of GPT-6 Astra as Embodied Policies</a></strong> : la première évaluation large de GPT-6 Astra en robotique, solide en navigation (RxR 92 %, HM3D 82 %) mais encore limitée en manipulation (RoboCasa365 38,7 %).</li>
+<li><strong><a href="https://huggingface.co/papers/2609.38597">PixelUMM</a></strong> : un modèle unifié sans encodeur, qui comprend et génère images et vidéos dans l'espace des pixels (ImageNet 76,2 ; COCO-Stuff 74,5).</li>
+<li><strong><a href="https://huggingface.co/papers/2609.34599">The Low-Rank Structure of VLA Reinforcement Learning</a></strong> : un résultat d'analyse utile, puisque les mises à jour RL des VLA sont de faible rang et localisées, ce qui ouvre la voie à un fine-tuning RL plus ciblé.</li>
+</ul>
+<h3>Multimodal</h3>
+<ul>
+<li><strong><a href="https://huggingface.co/papers/2609.40316">Scaling Laws for Looped Mixture of Experts</a></strong> : des lois d'échelle pour les MoE en boucle, dont le raisonnement rivalise avec celui d'un MoE non bouclé environ deux fois plus grand, à calcul égal.</li>
+<li><strong><a href="https://huggingface.co/papers/2609.38541">ThinkV2V</a></strong> : il active le raisonnement des MLLM avant la génération pour l'édition vidéo guidée par instructions et revendique l'état de l'art sur son propre benchmark ThinkV2V-Bench.</li>
+<li><strong><a href="https://huggingface.co/papers/2609.38121">WUSH-KV</a></strong> : une quantification du cache KV par transformées adaptées aux données, pour réduire le coût mémoire de l'inférence en contexte long.</li>
+</ul>
+<h3>Agents</h3>
+<ul>
+<li><strong><a href="https://huggingface.co/papers/2609.38923">GraphForge</a></strong> : une synthèse d'espaces de travail ancrée dans des graphes de preuves pour entraîner des agents « de bureau », avec des scores annoncés sur GDPVal (1445,7), Workspace-Bench-Lite (63,7) et SpreadsheetBench II (24,0).</li>
+<li><strong><a href="https://huggingface.co/papers/2609.40285">PivotOPD</a></strong> : il apprend aux agents multi-tours à récupérer après une erreur critique, avec +3,2 % sur SWE-Bench Verified et +5,5 % sur ALFWorld.</li>
+<li><strong><a href="https://huggingface.co/papers/2609.39788">Safety of Latent Communication in Multi-Agent Systems</a></strong> : une alerte de sécurité, car la communication latente entre agents peut accroître la conformité dangereuse sans toucher aux agents alignés.</li>
+</ul>
+<h3>Audio</h3>
+<ul>
+<li><strong><a href="https://huggingface.co/papers/2609.38658">Tacit-TTS</a></strong> : un clonage de voix sans transcription par prédiction masquée, 10 fois plus rapide qu'IndexTTS2 sur les énoncés de plus de 5 secondes, avec une qualité zero-shot annoncée comme compétitive.</li>
 </ul>
   </section>
 
@@ -900,7 +895,7 @@
 </script>
 
 <footer>
-  <p>369 items collectés, 367 jugés pertinents.
+  <p>462 items collectés, 432 jugés pertinents.
   Code du pipeline non publié ici — voir le dépôt privé.</p>
 </footer>
 </body>
