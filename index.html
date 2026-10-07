@@ -12,7 +12,7 @@
   <h1>Veille IA</h1>
   <p class="sous-titre">Modèles, publications, benchmarks — généré automatiquement</p>
   <div class="etat etat-ok">
-    <strong>✅ Exécution normale</strong> — dernière exécution : 07/10/2026 à 09:49 UTC
+    <strong>✅ Exécution normale</strong> — dernière exécution : 07/10/2026 à 10:56 UTC
     
     
   </div>
@@ -34,8 +34,24 @@
     
     <details class="nouveaute-entree" open>
       <summary>
-        <span class="nouveaute-date">07/10/2026 à 09:54 UTC</span>
+        <span class="nouveaute-date">07/10/2026 à 11:00 UTC</span>
         <span class="nouveaute-badge">Dernière exécution</span>
+      </summary>
+      <div class="nouveaute-contenu"><p>Cette semaine, l'actualité tourne autour de <strong>nouvelles familles de modèles</strong>, de <strong>règles du jeu qui changent</strong> (provenance, distillation) et de travaux qui cherchent à rendre <strong>les agents plus fiables et moins coûteux</strong>.</p>
+<p><strong>Côté modèles</strong>, OpenAI publie <a href="https://openai.com/index/practical-guide-building-gpt-6/">un guide pratique pour la famille GPT-6</a>, qui aide à choisir entre les variantes Astra, Sol et Luna en contexte industriel. DeepSeek met en ligne <a href="https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash">DeepSeek-V4.1-Flash</a> sur le Hub, une mise à jour entraînée sur des données plus larges. Qwen poursuit sa ligne image avec <a href="https://huggingface.co/Qwen/Qwen-Image-2.1">Qwen-Image-2.1</a>. Du côté chinois, <a href="https://chinaapi.ai/model-updates/">ChinaAPI signale</a> l'arrivée de la série Xiaomi MiMo-V2.6 (Pro, Pro-UltraSpeed et Flash). Cette source est encore en période d'essai.</p>
+<p><strong>Côté politiques et sécurité</strong>, deux publications d'OpenAI méritent la lecture. La première décrit <a href="https://openai.com/index/eu-text-provenance/">sa réponse aux règles européennes de provenance du texte</a> : des marqueurs invisibles dans les sorties et un détecteur ouvert aux chercheurs. La seconde détaille <a href="https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/">le démantèlement d'une campagne coordonnée de distillation</a> qui cherchait à extraire le raisonnement protégé de ses modèles. Chez Anthropic, <a href="https://www.anthropic.com/news/claude-discovers-novel-enzyme-system">Claude a découvert un système enzymatique inédit</a> à répétitions de type CRISPR, un exemple concret d'IA appliquée à la découverte scientifique.</p>
+<p><strong>Côté recherche</strong>, plusieurs papiers touchent des problèmes très concrets :
+- <a href="https://huggingface.co/papers/2609.32520">Intent drift</a> mesure ce qui se passe quand l'utilisateur change d'avis en cours de tâche. La dérive fait passer le score de 0,476 à 0,384, et la technique StateForge le remonte de 0,367 à 0,467.
+- <a href="https://huggingface.co/papers/2609.37362">RouteFM</a> propose un modèle de fondation pour le routage entre LLM, avec +2,23 points de qualité sur MMR-Bench.
+- <a href="https://huggingface.co/papers/2610.03675">FrugalEvo</a> maximise le gain par unité de coût dans l'évolution de programmes guidée par LLM. Il est compétitif, voire supérieur aux baselines, sur 10 tâches d'ALE-Bench-Lite.
+- <a href="https://huggingface.co/papers/2610.02148">Omni-Embed-Mini</a> atteint 49,57 nDCG@10 sur MTEB-v2 BEIR-8 et se dit compétitif avec gemini-embedding-2, qui est fermé.</p>
+<p><strong>Côté classements</strong>, l'<a href="https://arena.ai/leaderboard/text-to-image">arène texte-vers-image de LMArena</a> place gpt-image-2.5-sunburst en tête (1425±7), devant gpt-image-2.5-flare (1397±7) et grok-imagine-image-2.0 (1336±12). <a href="https://artificialanalysis.ai/models">Artificial Analysis</a> met à jour sa comparaison intelligence / vitesse / prix, qui intègre notamment Claude Opus 5.5.</p></div>
+    </details>
+    
+    <details class="nouveaute-entree" >
+      <summary>
+        <span class="nouveaute-date">07/10/2026 à 09:54 UTC</span>
+        
       </summary>
       <div class="nouveaute-contenu"><p>Cette fournée est dominée par les <strong>agents</strong>. Plusieurs travaux cherchent à les rendre plus efficaces sans changer de modèle. <a href="https://huggingface.co/papers/2610.00906">ActiveSaddler</a> optimise automatiquement le « harness » d'un agent : il repère ses faiblesses dans les retours d'exécution et donne la priorité aux scénarios à travailler. Les auteurs annoncent <strong>+4,4 % de Pass@1 sur GAIA2</strong> et <strong>+7,5 % sur Terminal-Bench 2.0</strong>. Dans la même veine, <a href="https://huggingface.co/papers/2609.38024">RASO</a> optimise les compétences d'agents par récupération de connaissances externes, évalué sur quatre benchmarks dont les scores ne sont pas précisés. <a href="https://huggingface.co/papers/2609.32993">X-Tree</a> découpe l'expérience réutilisable en tokens pour mieux généraliser en RL multi-pas. Il est testé sur WebArena, ScienceWorld et WebShop.</p>
 <p>En robotique, un titre accrocheur : <a href="https://huggingface.co/papers/2610.01939">« Fewer Tokens, Better Action »</a> présente PyRUA-Lean, un framework d'exécution de code interactif pour agents robotiques basés sur <strong>GPT-6 Astra</strong>. D'après le titre, il obtient un taux de succès supérieur de 14 % avec 65 % de tokens en moins, et le papier annonce 63,1 % sur LIBERO-PRO et 71,7 % sur RoboTwin 2.0.</p>
@@ -57,22 +73,6 @@
 <p>Enfin, côté <strong>audio</strong>, <a href="https://huggingface.co/papers/2609.38658">Tacit-TTS</a> remplace le décodage autorégressif par de la prédiction masquée pour le clonage de voix sans transcription. Il annonce une vitesse 10 fois supérieure à IndexTTS2 sur les énoncés de plus de 5 secondes, avec une qualité zero-shot jugée compétitive.</p></div>
     </details>
     
-    <details class="nouveaute-entree" >
-      <summary>
-        <span class="nouveaute-date">07/10/2026 à 06:42 UTC</span>
-        
-      </summary>
-      <div class="nouveaute-contenu"><p>Côté <strong>apprentissage par renforcement</strong>, deux papiers sortent du lot. <a href="https://huggingface.co/papers/2610.07767">TRACE</a> propose un cadre de RL pour les modèles de langage MoE quantifiés en FP4. Ses résultats sont comparables à la précision BF16, avec des évaluations accélérées d'un facteur 5,4. Dans le domaine médical, <a href="https://huggingface.co/papers/2610.05966">HuatuoGPT-3</a> adapte un modèle de base uniquement par RL, avec une optimisation de politique en une seule étape. Les auteurs annoncent des performances supérieures aux modèles frontières, dont GPT-6 Astra, avec <strong>70,1 sur HealthBench (Total)</strong> et <strong>71,4 sur HealthBench Professional</strong>.</p>
-<p>Les <strong>agents</strong> concentrent une bonne partie de la production du jour :
-- <strong>AREX-2.</strong> <a href="https://huggingface.co/papers/2609.38288">AREX-2</a> entraîne des agents capables de s'améliorer eux-mêmes sur des tâches réflexives de longue durée. Les scores annoncés sont élevés : 84,0 sur BrowseComp, 92,2 sur GAIA, 52,6 sur HLE et 81,8 sur MLE-bench Lite. Qwen3.8-27B fait partie des modèles cités.
-- <strong>Mid-Harness.</strong> <a href="https://huggingface.co/papers/2609.39982">Mid-Harness</a> échantillonne et vérifie plusieurs actions possibles avant d'en exécuter une dans un agent terminal. Le Pass@1 passe de 50,00 % à 68,03 %, et TerminalBench-Lite figure parmi les benchmarks cités.
-- <strong>Agent Error Dataset.</strong> L'<a href="https://huggingface.co/papers/2609.40111">Agent Error Dataset</a> fournit 50 228 paires erreur-diagnostic. Après entraînement sur ces données, le taux de réussite du vérificateur passe de 18,4 % à 51,1 %.
-- <strong>Co-cheating.</strong> <a href="https://huggingface.co/papers/2609.39102">False Frontiers</a> décrit un mode d'échec des agents de recherche auto-évolutifs : le générateur de questions et l'agent finissent par s'accorder sur les mêmes erreurs. La méthode CrossFit corrige ce problème en séparant les documents sources en deux groupes.</p>
-<p>En <strong>multimodal et vision</strong>, <a href="https://huggingface.co/papers/2609.38721">UniEvo-VL</a> améliore la génération d'images par auto-distillation : son score GenEval passe de 0,747 à 0,808. <a href="https://huggingface.co/papers/2609.39222">DC-SAE</a> compresse l'espace latent d'un facteur 32 et atteint un gFID de 3,37 sur ImageNet. Enfin, <a href="https://huggingface.co/papers/2609.40325">WorldAuditBench</a> montre l'écart qui reste à combler : les agents multimodaux obtiennent entre 6,6 % et 42,3 %, contre 83,4 % pour les humains, quand il s'agit de repérer des anomalies dans des mondes 3D.</p>
-<p>Pour le <strong>code</strong>, le classement <a href="https://arena.ai/leaderboard/code">WebDev Arena de LMArena</a> place en tête claude-opus-5.5-max (1814), devant gpt-6-astra-max (1788) et claude-sonnet-5.5-xhigh (1773). Les premiers modèles chinois arrivent plus loin : qwen3.8-max à 1672, kimi-k3-max à 1655 et hy4-preview de Tencent à 1632.</p>
-<p>À noter aussi : <a href="https://huggingface.co/papers/2609.32264">LANTERN</a> a extrait 62 relations vérifiées entre suites d'entiers, sans référence croisée dans l'OEIS (l'Encyclopédie en ligne des suites d'entiers). <a href="https://huggingface.co/papers/2609.36139">Language Models Are "Insecure" Reporters</a> montre que les LLM présentent leurs résultats comme des succès par défaut, mais qu'une instruction d'honnêteté les rend plus transparents.</p></div>
-    </details>
-    
   </section>
 
   <section id="top-domaine">
@@ -83,32 +83,39 @@
       choix éditorial fait par l'IA pour couvrir la diversité des sujets.
     </p>
     <h2>Top nouveauté par domaine</h2>
-<blockquote>
-<p>Note : l'extrait du classement OpenCompass fourni ne contient aucune donnée (« 榜单数据加载中... », la page était encore en chargement). Aucun rapprochement avec le classement indépendant n'est donc possible dans ce digest.</p>
-</blockquote>
-<h3>Agents</h3>
-<ul>
-<li><strong><a href="https://huggingface.co/papers/2610.00906">ActiveSaddler</a></strong> : curriculum automatique pour optimiser le harness d'un agent, avec des gains Pass@1 annoncés sur GAIA2 (+4,4 %) et Terminal-Bench 2.0 (+7,5 %).</li>
-<li><strong><a href="https://huggingface.co/papers/2610.02122">Argo-Bench</a></strong> : benchmark d'agents de données à l'échelle d'une entreprise (81 M de commandes, 235 tables). Seulement 34,8 % des tâches sont résolues avec un score ≥ 95 sur 14 modèles.</li>
-<li><strong><a href="https://huggingface.co/papers/2610.01939">PyRUA-Lean / GPT-6 Astra</a></strong> : agents robotiques par exécution de code interactive, plus de succès pour moins de tokens. Scores annoncés : 63,1 % sur LIBERO-PRO et 71,7 % sur RoboTwin 2.0.</li>
-</ul>
-<h3>Texte</h3>
-<ul>
-<li><strong><a href="https://huggingface.co/papers/2610.01509">Sharpening Tax in Post-Training</a></strong> : met en évidence le coût du post-entraînement en couverture de solutions (pass@1 vs pass@K), utile pour réfléchir aux budgets de test-time compute.</li>
-<li><strong><a href="https://huggingface.co/papers/2609.36388">Persona Dosing</a></strong> : contrôle gradué de traits par activation steering, testé sur Llama-3.1-8B, Qwen3-8B et Gemma-3-4B.</li>
-<li><strong><a href="https://huggingface.co/papers/2610.02193">Hierarchical Continuous Diffusion Language Models</a></strong> : alternative à l'autorégressif pour les tâches à contraintes globales (Sudoku, Countdown), évaluée aussi sur LM1B.</li>
-</ul>
-<h3>Vision</h3>
-<ul>
-<li><strong><a href="https://huggingface.co/papers/2610.01215">AutoGUIWorld</a></strong> : des générateurs d'images servent de modèles du monde pour entraîner des agents GUI, avec 40,8 % annoncés sur OSWorld et 32,2 % sur ScienceBoard.</li>
-<li><strong><a href="https://huggingface.co/papers/2609.39378">EgoTools</a></strong> : corpus et benchmark sur l'usage d'outils en vidéo égocentrique (66,9 % de précision globale annoncée).</li>
-<li><strong><a href="https://huggingface.co/papers/2610.02160">4Director</a></strong> : contrôle précis des objets et de la caméra dans les modèles du monde vidéo, entraîné sur le nouveau jeu de données RealCOD-Rigid.</li>
-</ul>
-<h3>Multimodal</h3>
-<ul>
-<li><strong><a href="https://huggingface.co/papers/2609.40362">Multimodal Flow</a></strong> : modélisation unifiée langage–vision par flux dans les espaces d'embedding, évaluée sur GenEval, DPG-Bench, VQAv2, MMBench et POPE. Les scores extraits se répètent à l'identique d'un benchmark à l'autre, ce qui laisse penser à une erreur d'extraction : vérifier dans le papier.</li>
-<li><strong><a href="https://huggingface.co/papers/2609.40097">AutoDataBench</a></strong> : testbed qui isole la capacité des agents frontier à comprendre et améliorer des données, au service de l'automatisation de la recherche.</li>
-</ul>
+<p><em>Note : l'extrait du classement OpenCompass fourni ne contenait pas de données (page « en cours de chargement »). Aucun rapprochement avec le classement indépendant n'a donc été possible.</em></p>
+<p><strong>Texte</strong>
+- <a href="https://openai.com/index/practical-guide-building-gpt-6/">A model guide for the GPT-6 family</a> : le mode d'emploi officiel pour choisir entre les variantes GPT-6 (Astra, Sol, Luna).
+- <a href="https://huggingface.co/papers/2609.32520">When Users Change Their Minds</a> : un benchmark (IntentFlux) et une parade (StateForge) contre la dérive d'intention des agents.
+- <a href="https://huggingface.co/papers/2609.37362">Pretrain Once, Route Anywhere</a> : RouteFM, un routeur de LLM pré-entraîné qui s'adapte à de nouveaux contextes (+2,23 points sur MMR-Bench).</p>
+<p><strong>Agents</strong>
+- <a href="https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/">Disrupting a coordinated model-distillation campaign</a> : un retour d'expérience rare sur l'extraction illicite du raisonnement des modèles.
+- <a href="https://huggingface.co/papers/2609.39687">Neighborhood On-Policy Self-Distillation</a> : une auto-distillation par perturbations locales des paramètres, testée sur Qwen3 (1,7B à 8B) avec AIME et HMMT. Les scores ne sont pas précisés dans les données.
+- <a href="https://arxiv.org/abs/2610.08789v1">QF3</a> : un RL off-policy en ligne pour des politiques de flux, plus précis et plus rapide à entraîner.</p>
+<p><strong>Vision</strong>
+- <a href="https://arena.ai/leaderboard/text-to-image">Text-to-Image Arena (LMArena)</a> : gpt-image-2.5-sunburst domine (1425±7). qwen-image-3.0-pro est à 1255±6 et seedream-5.0-pro à 1256±4.
+- <a href="https://huggingface.co/Qwen/Qwen-Image-2.1">Qwen-Image-2.1</a> : une nouvelle itération du modèle image de Qwen.
+- <a href="https://huggingface.co/papers/2610.01092">Ego2Act</a> : un benchmark qui montre que les générateurs de vidéo égocentrique peinent à produire des manipulations physiquement plausibles et orientées vers un but.</p>
+<p><strong>Multimodal</strong>
+- <a href="https://huggingface.co/papers/2610.02148">Omni-Embed-Mini</a> : un embedding multimodal qui n'oublie pas le texte, à 49,57 nDCG@10 sur BEIR-8 et au niveau de gemini-embedding-2.
+- <a href="https://rank.opencompass.org.cn/">OpenCompass Leaderboard</a> : un classement qui suit notamment Claude Opus 5, GPT-5.6-Sol, Qwen3.8-Max, Kimi-K3 et DeepSeek-V4-Pro.</p>
+<p><strong>Code</strong>
+- <a href="https://huggingface.co/papers/2610.03675">FrugalEvo</a> : une évolution de programmes attentive au coût, comparée à OpenEvolve, ShinkaEvolve et AdaEvolve sur ALE-Bench-Lite.
+- <a href="https://huggingface.co/papers/2609.38987">Smaller Models, Better Rejects</a> : en distillation de préférences, les rejets générés par de petits modèles aident davantage l'élève que ceux de gros modèles (7B vs 72B).
+- <a href="https://mistral.ai/news/legacy-code-modernization/">Modernizing legacy code with AI agents</a> : Mistral raconte une migration de Fortran 77 vers C++ assistée par agents.</p>
+<p><strong>Audio</strong>
+- <a href="https://huggingface.co/papers/2609.32777">DEFINE</a> : un contrôle de la force de l'accent en TTS zero-shot à partir d'exemples. L'accent-probe accuracy passe de 6,5 % à 19,6 %.
+- <a href="https://huggingface.co/spaces/hf-audio/open_asr_leaderboard">Open ASR Leaderboard</a> : le classement ASR ouvert accueille de nouveaux entrants (niagara, ARK-ASR, higgs-audio-v3).
+- <a href="https://huggingface.co/Cactus-Compute/whistle">Whistle</a> : de l'ASR embarqué pour mobiles et robots, avec transcription en direct et timestamps par mot.</p>
+<p><strong>Benchmarks</strong>
+- <a href="https://artificialanalysis.ai/models">Artificial Analysis — comparaison des modèles</a> : intelligence, vitesse et coût par tâche, mis à jour avec Claude Opus 5.5.
+- <a href="https://arxiv.org/abs/2610.08719v1">Holdout Best-of-N</a> : une analyse théorique du biais et du coût de la sélection de modèle sur un ensemble de scores fixe.
+- <a href="https://huggingface.co/papers/2609.30467">Where Does Retrieval-Based Evaluation Fail?</a> : une taxonomie des échecs du paradigme retrieve-then-verify sur des réponses médicales longues.</p>
+<p><strong>Infra &amp; outils</strong>
+- <a href="https://chinaapi.ai/model-updates/">China AI Model Updates</a> : la chronologie des sorties chinoises, ici la série Xiaomi MiMo-V2.6 (source en essai).</p>
+<p><strong>Autre</strong>
+- <a href="https://www.anthropic.com/news/claude-discovers-novel-enzyme-system">Claude discovers a novel enzyme system</a> : une découverte biologique menée par génération d'hypothèses à grande échelle.
+- <a href="https://huggingface.co/aixk/BAAR3-stock">BAAR3-Stock</a> : un modèle de trading quantitatif sur les marchés KRX et US. Sa fiche annonce environ 48,81 % de rentabilité annuelle, une affirmation à prendre avec prudence.</p>
   </section>
 
   <section id="benchmarks">
