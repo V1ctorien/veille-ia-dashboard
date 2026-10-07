@@ -12,7 +12,7 @@
   <h1>Veille IA</h1>
   <p class="sous-titre">Modèles, publications, benchmarks — généré automatiquement</p>
   <div class="etat etat-ok">
-    <strong>✅ Exécution normale</strong> — dernière exécution : 07/10/2026 à 09:27 UTC
+    <strong>✅ Exécution normale</strong> — dernière exécution : 07/10/2026 à 09:49 UTC
     
     
   </div>
@@ -34,8 +34,20 @@
     
     <details class="nouveaute-entree" open>
       <summary>
-        <span class="nouveaute-date">07/10/2026 à 09:33 UTC</span>
+        <span class="nouveaute-date">07/10/2026 à 09:54 UTC</span>
         <span class="nouveaute-badge">Dernière exécution</span>
+      </summary>
+      <div class="nouveaute-contenu"><p>Cette fournée est dominée par les <strong>agents</strong>. Plusieurs travaux cherchent à les rendre plus efficaces sans changer de modèle. <a href="https://huggingface.co/papers/2610.00906">ActiveSaddler</a> optimise automatiquement le « harness » d'un agent : il repère ses faiblesses dans les retours d'exécution et donne la priorité aux scénarios à travailler. Les auteurs annoncent <strong>+4,4 % de Pass@1 sur GAIA2</strong> et <strong>+7,5 % sur Terminal-Bench 2.0</strong>. Dans la même veine, <a href="https://huggingface.co/papers/2609.38024">RASO</a> optimise les compétences d'agents par récupération de connaissances externes, évalué sur quatre benchmarks dont les scores ne sont pas précisés. <a href="https://huggingface.co/papers/2609.32993">X-Tree</a> découpe l'expérience réutilisable en tokens pour mieux généraliser en RL multi-pas. Il est testé sur WebArena, ScienceWorld et WebShop.</p>
+<p>En robotique, un titre accrocheur : <a href="https://huggingface.co/papers/2610.01939">« Fewer Tokens, Better Action »</a> présente PyRUA-Lean, un framework d'exécution de code interactif pour agents robotiques basés sur <strong>GPT-6 Astra</strong>. D'après le titre, il obtient un taux de succès supérieur de 14 % avec 65 % de tokens en moins, et le papier annonce 63,1 % sur LIBERO-PRO et 71,7 % sur RoboTwin 2.0.</p>
+<p>Côté évaluation, <a href="https://huggingface.co/papers/2610.02122">Argo-Bench</a> place les agents de données dans un environnement e-commerce simulé de <strong>81 millions de commandes et 235 tables</strong>. Sur les 14 modèles frontier et open-weight testés, le résultat annoncé est de 34,8 % de tâches résolues avec un score ≥ 95, pour une moyenne de 59,5 points. On est encore loin du compte sur les workflows d'entreprise.</p>
+<p>Pour le <strong>texte</strong>, deux papiers alimentent la réflexion sur le post-entraînement et le raisonnement. <a href="https://huggingface.co/papers/2610.01509">« Sharpening Tax in Post-Training »</a> montre que le post-entraînement améliore l'efficacité d'échantillonnage, mais au prix d'une moindre couverture des solutions : c'est l'arbitrage pass@1 / pass@K. Les modèles de diffusion de texte progressent aussi : <a href="https://huggingface.co/papers/2610.02193">HC-DLM</a> propose une alternative hiérarchique continue à l'autorégressif, évaluée sur Sudoku, Countdown et LM1B, et <a href="https://huggingface.co/papers/2609.37533">E-MoE</a> applique le Mixture-of-Experts aux modèles de diffusion non factorisés. Le papier <a href="https://huggingface.co/papers/2609.36388">Persona Dosing</a> mérite aussi l'attention. Il dose l'expression de traits de personnalité par pilotage d'activation sur Llama-3.1-8B, Qwen3-8B et Gemma-3-4B, avec des hausses annoncées de 33,2, 18,3 et 17,8 points.</p>
+<p>En <strong>vision</strong>, <a href="https://huggingface.co/papers/2610.01215">AutoGUIWorld</a> utilise des générateurs d'images comme modèles du monde pour synthétiser des trajectoires d'agents GUI sans déployer les logiciels. Le papier cite Qwen3.5-35B-A3B et annonce 40,8 % sur OSWorld et 32,2 % sur ScienceBoard. <a href="https://huggingface.co/papers/2609.39378">EgoTools</a> propose un corpus et un benchmark sur l'usage d'outils en vidéo égocentrique. Il cite Gemini-3.1-Pro et Qwen3-VL-8B-Instruct, avec 66,9 % de précision globale annoncée. Enfin, <a href="https://huggingface.co/papers/2610.02160">4Director</a> contrôle des modèles du monde vidéo à l'aide d'une géométrie 3D rigide.</p></div>
+    </details>
+    
+    <details class="nouveaute-entree" >
+      <summary>
+        <span class="nouveaute-date">07/10/2026 à 09:33 UTC</span>
+        
       </summary>
       <div class="nouveaute-contenu"><p>Cette fournée penche nettement vers <strong>les agents et la vidéo</strong>, et la frontière entre « modèle » et « système » devient de plus en plus floue.</p>
 <p>Côté modèles de pointe, <strong>GPT-6 Astra</strong> passe sur le banc d'essai de la robotique. Une <a href="https://huggingface.co/papers/2609.38537">évaluation systématique</a> le teste comme politique incarnée généraliste dans six domaines. Les résultats sont contrastés : jusqu'à 92 % de réussite sur le suivi d'instructions RxR et 82 % en recherche d'objets HM3D, mais seulement 48 % sur RoboDojo, 50 % sur DexJoCo et 38,7 % sur RoboCasa365. Les auteurs résument eux-mêmes l'écart : les décisions de tâche sont utiles, le contrôle physique n'est pas encore fiable. Le même GPT-6 Astra figure, aux côtés de MiMo-V2.6, Grok 4.7 et V4.1-Flash, dans un <a href="https://toolpix.pythonanywhere.com/blog/ai-model-releases-tracker-2026">tracker des sorties de modèles de fin 2026</a>. Ce blog provient d'une source encore en période d'essai et donne peu de chiffres vérifiables (un TTFT de 38 ms est mentionné) : à lire avec prudence.</p>
@@ -61,28 +73,6 @@
 <p>À noter aussi : <a href="https://huggingface.co/papers/2609.32264">LANTERN</a> a extrait 62 relations vérifiées entre suites d'entiers, sans référence croisée dans l'OEIS (l'Encyclopédie en ligne des suites d'entiers). <a href="https://huggingface.co/papers/2609.36139">Language Models Are "Insecure" Reporters</a> montre que les LLM présentent leurs résultats comme des succès par défaut, mais qu'une instruction d'honnêteté les rend plus transparents.</p></div>
     </details>
     
-    <details class="nouveaute-entree" >
-      <summary>
-        <span class="nouveaute-date">06/10/2026 à 14:20 UTC</span>
-        
-      </summary>
-      <div class="nouveaute-contenu"><p>Cette fois, le flux est dominé par les <strong>agents</strong> et les <strong>modèles de monde vidéo</strong>, avec une forte présence du renforcement (RL) appliqué aux LLM.</p>
-<p><strong>Côté agents et recherche</strong>, <a href="https://huggingface.co/papers/2609.36071">LongCat-DeepResearch</a> combine un modèle LongCat amélioré et un workflow multi-agents pour produire des rapports de recherche détaillés. Il annonce 55,25 sur DeepResearchBench, 51,35 sur DeepResearchBench II et 79,83 sur ResearchRubrics. Sur l'usage d'ordinateur, <a href="https://huggingface.co/papers/2609.38008">HybridCUA</a> apprend à un agent à alterner entre interface graphique et ligne de commande, grâce à des récompenses adaptées au CLI. Les auteurs annoncent +14,8 points sur OSWorld (53,6 %) et +4,0 points sur WindowsAgentArena. Plus conceptuel, <a href="https://huggingface.co/papers/2609.37236">Asking for What Was Never Requested</a> étudie des agents « proactifs », qui vont chercher des informations qu'on ne leur a pas demandées et savent s'arrêter à temps.</p>
-<p><strong>Côté entraînement des LLM</strong>, trois papiers retravaillent la boucle RL :
-- <a href="https://huggingface.co/papers/2609.35954">ROSS</a> réapprend à partir de ses propres rollouts, avec une supervision sélective. Il annonce un passage de 64,20 % à 68,40 % sur SWE-bench Verified.
-- <a href="https://huggingface.co/papers/2609.37868">GRAFT</a> échange des trajectoires entre modèles hétérogènes pour le RLVR. Il annonce 2,1 à 4,5 points de gain en raisonnement mathématique.
-- <a href="https://huggingface.co/papers/2609.36802">EasyPPO</a> défend l'idée que la stabilité du critique est la clé de PPO appliqué aux LLM.</p>
-<p>Dans la même veine, les <a href="https://huggingface.co/papers/2609.37725">Context Language Models</a> gèrent eux-mêmes leur contexte. Les chiffres annoncés, avec Qwen3.5-9B parmi les modèles cités : +11,4 % de précision sur BrowseComp-Plus avec 21,5 % de FLOPs en moins.</p>
-<p><strong>En vidéo et robotique</strong>, les « world models » sont partout :
-- <a href="https://huggingface.co/papers/2609.34606">WorldAttention</a> propose une attention efficace pour les modèles de monde vidéo interactifs (VBench-Long 0,9472, InterVBench 0,9668).
-- <a href="https://huggingface.co/papers/2609.38057">EVO-WAM</a> fait évoluer des modèles vidéo-action à partir de leurs propres trajectoires générées. Les taux de réussite passent de 26,9 % à 68,0 % sur RoboTwin 2.0 et de 20,0 % à 76,7 % sur les tâches composites.
-- <a href="https://huggingface.co/papers/2609.38059">WorldLine</a> simule visuellement la manipulation robotique pour évaluer des politiques.
-- <a href="https://huggingface.co/papers/2609.37969">SoL-Refiner</a> transforme en une seule étape des sorties basse résolution en vidéo 4K.</p>
-<p>Enfin, deux sorties plus « produit » méritent un clic :
-- <a href="https://huggingface.co/papers/2609.37959">TabFM</a>, un modèle de fondation zéro-shot pour données tabulaires, entraîné sur des tables synthétiques. Il se classe premier parmi les modèles de fondation tabulaires par défaut sur TabArena (51 jeux de données).
-- <a href="https://huggingface.co/papers/2609.38157">EmoRES-TTS</a>, qui oriente IndexTTS-2 et CosyVoice2 vers une parole plus expressive.</p></div>
-    </details>
-    
   </section>
 
   <section id="top-domaine">
@@ -93,34 +83,31 @@
       choix éditorial fait par l'IA pour couvrir la diversité des sujets.
     </p>
     <h2>Top nouveauté par domaine</h2>
-<p><em>L'extrait du classement OpenCompass reçu ne contient aucune donnée exploitable (la page affichait « 榜单数据加载中… », soit « données du classement en cours de chargement »). Aucun rapprochement avec le classement indépendant n'est donc possible pour cette édition.</em></p>
+<blockquote>
+<p>Note : l'extrait du classement OpenCompass fourni ne contient aucune donnée (« 榜单数据加载中... », la page était encore en chargement). Aucun rapprochement avec le classement indépendant n'est donc possible dans ce digest.</p>
+</blockquote>
+<h3>Agents</h3>
+<ul>
+<li><strong><a href="https://huggingface.co/papers/2610.00906">ActiveSaddler</a></strong> : curriculum automatique pour optimiser le harness d'un agent, avec des gains Pass@1 annoncés sur GAIA2 (+4,4 %) et Terminal-Bench 2.0 (+7,5 %).</li>
+<li><strong><a href="https://huggingface.co/papers/2610.02122">Argo-Bench</a></strong> : benchmark d'agents de données à l'échelle d'une entreprise (81 M de commandes, 235 tables). Seulement 34,8 % des tâches sont résolues avec un score ≥ 95 sur 14 modèles.</li>
+<li><strong><a href="https://huggingface.co/papers/2610.01939">PyRUA-Lean / GPT-6 Astra</a></strong> : agents robotiques par exécution de code interactive, plus de succès pour moins de tokens. Scores annoncés : 63,1 % sur LIBERO-PRO et 71,7 % sur RoboTwin 2.0.</li>
+</ul>
 <h3>Texte</h3>
 <ul>
-<li><strong><a href="https://arxiv.org/abs/2610.08738v1">Denoising Hierarchical Representations: Joint Continuous Diffusion for Language Modeling</a></strong> : une diffusion continue hiérarchique pour la modélisation du langage, avec des gains annoncés sur plusieurs benchmarks (MAUVE 49,4 ; GSM8K 27,4 %).</li>
-<li><strong><a href="https://huggingface.co/papers/2609.38142">AdviSD: Learning to Advise Frontier LLMs</a></strong> : un petit modèle (Qwen3-8B) apprend par auto-distillation multi-tours ciblée à conseiller des LLM de pointe, avec +4,2 à 6,4 points sur BFCL-v3 et +3,9 à 5,1 points sur EnvScaler.</li>
-<li><strong><a href="https://huggingface.co/papers/2609.34736">SeLMRoute</a></strong> : un routage probabiliste des requêtes vers le meilleur LLM via des questions sémantiques interprétables, qui annonce 72,64 % sur LLMRouterBench et 2,66 % de PerfGain.</li>
+<li><strong><a href="https://huggingface.co/papers/2610.01509">Sharpening Tax in Post-Training</a></strong> : met en évidence le coût du post-entraînement en couverture de solutions (pass@1 vs pass@K), utile pour réfléchir aux budgets de test-time compute.</li>
+<li><strong><a href="https://huggingface.co/papers/2609.36388">Persona Dosing</a></strong> : contrôle gradué de traits par activation steering, testé sur Llama-3.1-8B, Qwen3-8B et Gemma-3-4B.</li>
+<li><strong><a href="https://huggingface.co/papers/2610.02193">Hierarchical Continuous Diffusion Language Models</a></strong> : alternative à l'autorégressif pour les tâches à contraintes globales (Sudoku, Countdown), évaluée aussi sur LM1B.</li>
 </ul>
 <h3>Vision</h3>
 <ul>
-<li><strong><a href="https://huggingface.co/papers/2609.38537">Systematically Exploring the Capabilities of GPT-6 Astra as Embodied Policies</a></strong> : la première évaluation large de GPT-6 Astra en robotique, solide en navigation (RxR 92 %, HM3D 82 %) mais encore limitée en manipulation (RoboCasa365 38,7 %).</li>
-<li><strong><a href="https://huggingface.co/papers/2609.38597">PixelUMM</a></strong> : un modèle unifié sans encodeur, qui comprend et génère images et vidéos dans l'espace des pixels (ImageNet 76,2 ; COCO-Stuff 74,5).</li>
-<li><strong><a href="https://huggingface.co/papers/2609.34599">The Low-Rank Structure of VLA Reinforcement Learning</a></strong> : un résultat d'analyse utile, puisque les mises à jour RL des VLA sont de faible rang et localisées, ce qui ouvre la voie à un fine-tuning RL plus ciblé.</li>
+<li><strong><a href="https://huggingface.co/papers/2610.01215">AutoGUIWorld</a></strong> : des générateurs d'images servent de modèles du monde pour entraîner des agents GUI, avec 40,8 % annoncés sur OSWorld et 32,2 % sur ScienceBoard.</li>
+<li><strong><a href="https://huggingface.co/papers/2609.39378">EgoTools</a></strong> : corpus et benchmark sur l'usage d'outils en vidéo égocentrique (66,9 % de précision globale annoncée).</li>
+<li><strong><a href="https://huggingface.co/papers/2610.02160">4Director</a></strong> : contrôle précis des objets et de la caméra dans les modèles du monde vidéo, entraîné sur le nouveau jeu de données RealCOD-Rigid.</li>
 </ul>
 <h3>Multimodal</h3>
 <ul>
-<li><strong><a href="https://huggingface.co/papers/2609.40316">Scaling Laws for Looped Mixture of Experts</a></strong> : des lois d'échelle pour les MoE en boucle, dont le raisonnement rivalise avec celui d'un MoE non bouclé environ deux fois plus grand, à calcul égal.</li>
-<li><strong><a href="https://huggingface.co/papers/2609.38541">ThinkV2V</a></strong> : il active le raisonnement des MLLM avant la génération pour l'édition vidéo guidée par instructions et revendique l'état de l'art sur son propre benchmark ThinkV2V-Bench.</li>
-<li><strong><a href="https://huggingface.co/papers/2609.38121">WUSH-KV</a></strong> : une quantification du cache KV par transformées adaptées aux données, pour réduire le coût mémoire de l'inférence en contexte long.</li>
-</ul>
-<h3>Agents</h3>
-<ul>
-<li><strong><a href="https://huggingface.co/papers/2609.38923">GraphForge</a></strong> : une synthèse d'espaces de travail ancrée dans des graphes de preuves pour entraîner des agents « de bureau », avec des scores annoncés sur GDPVal (1445,7), Workspace-Bench-Lite (63,7) et SpreadsheetBench II (24,0).</li>
-<li><strong><a href="https://huggingface.co/papers/2609.40285">PivotOPD</a></strong> : il apprend aux agents multi-tours à récupérer après une erreur critique, avec +3,2 % sur SWE-Bench Verified et +5,5 % sur ALFWorld.</li>
-<li><strong><a href="https://huggingface.co/papers/2609.39788">Safety of Latent Communication in Multi-Agent Systems</a></strong> : une alerte de sécurité, car la communication latente entre agents peut accroître la conformité dangereuse sans toucher aux agents alignés.</li>
-</ul>
-<h3>Audio</h3>
-<ul>
-<li><strong><a href="https://huggingface.co/papers/2609.38658">Tacit-TTS</a></strong> : un clonage de voix sans transcription par prédiction masquée, 10 fois plus rapide qu'IndexTTS2 sur les énoncés de plus de 5 secondes, avec une qualité zero-shot annoncée comme compétitive.</li>
+<li><strong><a href="https://huggingface.co/papers/2609.40362">Multimodal Flow</a></strong> : modélisation unifiée langage–vision par flux dans les espaces d'embedding, évaluée sur GenEval, DPG-Bench, VQAv2, MMBench et POPE. Les scores extraits se répètent à l'identique d'un benchmark à l'autre, ce qui laisse penser à une erreur d'extraction : vérifier dans le papier.</li>
+<li><strong><a href="https://huggingface.co/papers/2609.40097">AutoDataBench</a></strong> : testbed qui isole la capacité des agents frontier à comprendre et améliorer des données, au service de l'automatisation de la recherche.</li>
 </ul>
   </section>
 
