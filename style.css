@@ -20,6 +20,7 @@
   --serie-8: #e66767;
   --serie-autre: #6b7280;
   --grille: #2c2c2a;
+  --hauteur-entete: 160px; /* repli si le JS n'a pas mesuré l'en-tête réel (voir template.html) */
 }
 
 * { box-sizing: border-box; }
@@ -95,7 +96,7 @@ main {
   padding: 1.5rem;
 }
 
-section { margin-bottom: 3rem; }
+section { margin-bottom: 3rem; scroll-margin-top: var(--hauteur-entete); }
 
 .nouveaute-entree {
   border: 1px solid var(--bordure);
