@@ -19,51 +19,77 @@
 </header>
 
 <nav>
+  <a href="#recherche">Recherche</a>
   <a href="#nouveautes">Nouveautés</a>
   <a href="#top-domaine">Top nouveauté par domaine</a>
   <a href="#benchmarks">Benchmarks</a>
   <a href="#open-source">Open source</a>
   <a href="#model-review">Model Review</a>
-  <a href="#recherche">Recherche</a>
   <a href="#sources">Sources</a>
 </nav>
 </div>
 
 <main>
-  <section id="nouveautes">
-    <h2>Nouveautés</h2>
-    
-    <details class="nouveaute-entree" open>
-      <summary>
-        <span class="nouveaute-date">22/10/2026 à 09:57 UTC</span>
-        <span class="nouveaute-badge">Dernière exécution</span>
-      </summary>
-      <div class="nouveaute-contenu"><p>Cette semaine, les <strong>agents</strong> dominent les résultats. Côté évaluation, <a href="https://huggingface.co/papers/2610.20939">MAI-Gym</a> propose une plateforme open source unique pour évaluer des agents GUI, collecter des données et les entraîner par RL en ligne, sur mobile, ordinateur et web. Le modèle associé, MAI-Gym-9B, annonce 78,4 % sur MobileWorld et 76,2 % sur OSWorld-Verified. Côté apprentissage, <a href="https://arxiv.org/abs/2610.30105v1">ASTEROID</a> apprend à explorer en contexte par distillation on-policy asymétrique. Il annonce des retours environ 2× plus élevés à budget d'exploration fixe, et +40 % par rapport à une distillation standard. Côté produit, Mistral lance <a href="https://mistral.ai/news/agentic-search/">Agentic Search</a>, qui permet aux modèles de chercher et de naviguer dans les données internes d'une organisation. Les gains annoncés sont nets : de 26,7 % à 86 % sur FinanceBench, et de 6,3 % à 51,9 % sur OfficeQA Pro.</p>
+  <div class="recherche-nouveautes">
+    <section id="recherche">
+      <h2>Recherche</h2>
+      <p class="benchmark-explication">
+        Cherche dans toutes les synthèses archivées depuis leur mise en place (pas seulement les 3 dernières
+        affichées dans "Nouveautés"), par mot-clé et/ou par domaine.
+      </p>
+      <div class="recherche-controles">
+        <input type="search" id="recherche-texte" placeholder="Mot-clé (titre ou résumé)...">
+        <select id="recherche-domaine">
+          <option value="">Tous les domaines</option>
+          <option value="texte">Texte</option>
+          <option value="code">Code</option>
+          <option value="vision">Vision</option>
+          <option value="audio">Audio</option>
+          <option value="multimodal">Multimodal</option>
+          <option value="agents">Agents</option>
+          <option value="infra_outils">Infra / outils</option>
+          <option value="benchmarks">Benchmarks</option>
+          <option value="autre">Autre</option>
+        </select>
+      </div>
+      <p id="recherche-statut" class="benchmark-source"></p>
+      <div id="recherche-resultats" class="model-review-liste"></div>
+    </section>
+
+    <section id="nouveautes">
+      <h2>Nouveautés</h2>
+      
+      <details class="nouveaute-entree" open>
+        <summary>
+          <span class="nouveaute-date">22/10/2026 à 09:57 UTC</span>
+          <span class="nouveaute-badge">Dernière exécution</span>
+        </summary>
+        <div class="nouveaute-contenu"><p>Cette semaine, les <strong>agents</strong> dominent les résultats. Côté évaluation, <a href="https://huggingface.co/papers/2610.20939">MAI-Gym</a> propose une plateforme open source unique pour évaluer des agents GUI, collecter des données et les entraîner par RL en ligne, sur mobile, ordinateur et web. Le modèle associé, MAI-Gym-9B, annonce 78,4 % sur MobileWorld et 76,2 % sur OSWorld-Verified. Côté apprentissage, <a href="https://arxiv.org/abs/2610.30105v1">ASTEROID</a> apprend à explorer en contexte par distillation on-policy asymétrique. Il annonce des retours environ 2× plus élevés à budget d'exploration fixe, et +40 % par rapport à une distillation standard. Côté produit, Mistral lance <a href="https://mistral.ai/news/agentic-search/">Agentic Search</a>, qui permet aux modèles de chercher et de naviguer dans les données internes d'une organisation. Les gains annoncés sont nets : de 26,7 % à 86 % sur FinanceBench, et de 6,3 % à 51,9 % sur OfficeQA Pro.</p>
 <p>Sur l'<strong>architecture des LLM</strong>, deux papiers s'attaquent aux MoE « bouclés », qui gagnent en profondeur sans ajouter de paramètres. <a href="https://huggingface.co/papers/2610.01153">Looping Beyond Twice</a> présente LOOM, une recette pour stabiliser et diversifier les récurrences. Sur un modèle de 1,7B à 9 boucles, la perplexité passe de 9,62 à 7,77 et la précision de 42,4 % à 47,7 %. <a href="https://www.alphaxiv.org/abs/2610.19975">LatentLoop</a> répartit le calcul de façon asymétrique et annonce une NLL de validation inférieure de 7,9 % à celle d'un MoE Loop, et de 19,0 % à celle d'un MoE de base.</p>
 <p>L'<strong>inférence</strong> progresse aussi. <a href="https://arxiv.org/abs/2610.23796v1">FuTransformer</a> combine un prefill en FP8 et un décodage en INT4 sur Hopper. Il annonce 1,29 PFLOP/s, et une vitesse 2,1 à 3,3× supérieure au BF16 et 31 à 51 % supérieure au FP8. <a href="https://huggingface.co/papers/2511.14102">Specter</a> associe quantification, décodage spéculatif multi-étapes et déchargement des experts MoE, pour un TPOT jusqu'à 1,88× meilleur que l'état de l'art.</p>
 <p>Côté <strong>audio</strong>, deux sorties notables. Le <a href="https://huggingface.co/papers/2610.28711">rapport technique de Qwen-Audio-3.1-ASR</a> annonce 89,5 % en ASR classique, 82,1 % sur la parole multilingue et dialectale, et 93,2 % en transcription avec diarisation. Mistral publie <a href="https://mistral.ai/news/voxtral-3/">Voxtral 3</a>, un SDK d'agent vocal temps réel dans plus de 50 langues, avec une synthèse vocale qui s'adapte à l'émotion.</p>
 <p>Enfin, <a href="https://arxiv.org/abs/2610.30103v1">P2NPCBench</a> pose une question simple : le problème est-il vraiment devenu plus dur ? Le benchmark associe des problèmes NP-complets à leurs « jumeaux » de classe P. L'écart est brutal : 35,4 % de pass@1 sur les NPC contre 63,8 % sur les P. À noter aussi, hors des sentiers battus : <a href="https://www.alphaxiv.org/abs/2610.13917">Prompteina</a>, qui conçoit des structures protéiques à partir de texte et bat les baselines sur 15 des 18 propriétés structurelles, et <a href="https://huggingface.co/papers/2609.38123">HelixWorld</a>, un modèle de monde audio-visuel interactif en temps réel.</p></div>
-    </details>
-    
-    <details class="nouveaute-entree" >
-      <summary>
-        <span class="nouveaute-date">20/10/2026 à 06:39 UTC</span>
-        
-      </summary>
-      <div class="nouveaute-contenu"><p>Cette semaine, on retrouve trois sujets principaux : l'accélération de l'inférence, les classements de modèles chinois et la génération vidéo contrôlable.</p>
+      </details>
+      
+      <details class="nouveaute-entree" >
+        <summary>
+          <span class="nouveaute-date">20/10/2026 à 06:39 UTC</span>
+          
+        </summary>
+        <div class="nouveaute-contenu"><p>Cette semaine, on retrouve trois sujets principaux : l'accélération de l'inférence, les classements de modèles chinois et la génération vidéo contrôlable.</p>
 <p><strong>Une inférence plus rapide et moins gourmande.</strong> Le travail le plus marquant côté texte est <a href="https://huggingface.co/papers/2610.23935">DScout</a>. Il guide le décodage spéculatif à base de « brouillons » par diffusion avec deux factorisations, à l'entraînement comme à l'inférence. Les auteurs annoncent des gains de 3,84x sur Qwen3-4B et de 4,14x sur Qwen3-8B, mesurés sur six benchmarks. Côté mémoire, <a href="https://arxiv.org/abs/2610.20582v1">Latent Compaction</a> apprend à compresser le cache clés-valeurs par entraînement au moment du test et annonce 96,7 % sur RULER. Pour le code, <a href="https://huggingface.co/papers/2610.17831">Diff Diffusion</a> prédit les chemins d'édition avec un modèle de diffusion. Il annonce une inférence 2,78 fois plus rapide sur des benchmarks de complétion d'édition, et une latence P50 réduite de 39,0 % en production.</p>
 <p><strong>La sécurité intégrée dès l'entraînement.</strong> <a href="https://arxiv.org/abs/2610.26809v1">Safety Mid-Training</a> propose de traiter la sécurité comme une capacité de base, apprise en même temps que le raisonnement général. Les expériences portent sur Qwen3-1.7B, 4B et 8B, et la frontière sécurité-utilité est explicitement étudiée. Dans un autre registre, <a href="https://www.alphaxiv.org/abs/2610.vela-user-behavior-supervision">Vela</a> utilise le comportement des utilisateurs comme signal de supervision pour des réponses plus personnalisées. Sur Qwen3.6-35B-A3B, le score sur VelaBench passe de 51,5 à 63,0.</p>
 <p><strong>Les classements chinois bougent.</strong> Le <a href="https://www.superclueai.com/">SuperCLUE</a> de juillet 2026 couvre six compétences, dont le raisonnement mathématique, le code agentique et le contrôle des hallucinations. Il place Qwen3.8-Max-0902 en tête (72,62/100), devant DeepSeek-V4.1-Flash (71,81), Qwen3.8-Max (71,48), GLM-5.3 (71,29) et Kimi-K3 (70,68). Les écarts sont serrés, et ce classement se compare utilement à celui d'OpenCompass (voir plus bas). Côté sorties, Zhipu publie <a href="https://huggingface.co/zai-org/GLM-5.3-Flash-BF16">GLM-5.3-Flash-BF16</a> sur le Hub, orienté génération de code. MiniMax a présenté son modèle M2.7, décrit comme capable d'« apprentissage auto-évolutif », lors de son <a href="https://www.minimax.io/news/minimax-ai-founder-day-at-gtc">Founder Day à la GTC</a>.</p>
 <p><strong>La vidéo générative gagne en cohérence.</strong> <a href="https://huggingface.co/papers/2610.20571">ATAS (Any Time, Any Space)</a> organise la génération de vidéos longues autour d'un « état du monde » pour garder la cohérence spatiale et temporelle entre les plans. Il annonce les meilleures évaluations humaines. <a href="https://arxiv.org/abs/2610.26801v1">Mise-en-Video</a> apporte un contrôle 3D fin pour la vidéo multi-plans, avec des notes de 4,2 en qualité, 3,8 en cohérence entre plans et 4,5 en contrôlabilité des sujets.</p>
 <p><strong>Ailleurs.</strong> Côté agents, les <a href="https://huggingface.co/papers/2610.18861">Hybrid Reasoning Agents</a> raisonnent « au-delà du langage humain » tout en agissant par le langage. Ils annoncent un gain de 10,4 % et un coût d'inférence réduit. Côté audio, une <a href="https://arxiv.org/abs/2610.23678v1">étude critique de Qwen3-TTS</a> montre que le domaine (parole lue, réunions, parole émotionnelle, contrôle aérien) explique plus de variance que le choix du système. Côté industrie, <a href="https://mistral.ai/news/mistral-x-humain/">Mistral s'allie à HUMAIN</a> pour des modèles souverains au Moyen-Orient, et <a href="https://www.anthropic.com/news/public-benefit-fund">Anthropic crée un fonds d'intérêt général</a> doté de parts de l'entreprise.</p></div>
-    </details>
-    
-    <details class="nouveaute-entree" >
-      <summary>
-        <span class="nouveaute-date">19/10/2026 à 07:56 UTC</span>
-        
-      </summary>
-      <div class="nouveaute-contenu"><p>Cette semaine, deux tendances ressortent : les <strong>classements se resserrent en haut</strong> et de nombreux travaux portent sur <strong>l'efficacité des architectures</strong> et l'<strong>évaluation</strong> des modèles.</p>
+      </details>
+      
+      <details class="nouveaute-entree" >
+        <summary>
+          <span class="nouveaute-date">19/10/2026 à 07:56 UTC</span>
+          
+        </summary>
+        <div class="nouveaute-contenu"><p>Cette semaine, deux tendances ressortent : les <strong>classements se resserrent en haut</strong> et de nombreux travaux portent sur <strong>l'efficacité des architectures</strong> et l'<strong>évaluation</strong> des modèles.</p>
 <p>Côté classements, la page modèles d'<a href="https://artificialanalysis.ai/models">Artificial Analysis</a> suit désormais Claude Opus 5.5, Claude Sonnet 5.5, GPT-6 Sol, Gemini 3.5 Flash-Lite, Kimi K3, K2 Horizon 375B A23B et Muse Wonder Full. Elle introduit aussi de nouvelles suites d'évaluation : Terminal-Bench 4.0, AA-LCR v1.1, GDPval-AA v2.1 et AutomationBench-AA. Le <a href="https://llm-stats.com/leaderboards/llm-leaderboard">leaderboard llm-stats</a>, qui compare plus de 300 modèles, désigne Claude Opus 5.5 comme meilleur modèle global (index de 59.0) et Kimi K3 comme meilleur modèle open-weight (93.5 % sur GPQA). Muse Wonder est aussi mentionné par <a href="https://www.jiqizhixin.com/">机器之心</a> : Meta lancerait Muse Wonder et publierait en open source les poids de Muse Spark Open.</p>
 <p>Côté recherche, <a href="https://huggingface.co/papers/2610.17959">Virtual Head Attention</a> se distingue nettement. Deux opérations linéaires légères suffisent à améliorer la qualité en long contexte tout en réduisant le coût de calcul. Sur RULER, le score passe de 73.0 (GQA) à 84.4 (VHA). Le papier se compare aussi à MLA et MFA. En vidéo, <a href="https://huggingface.co/papers/2610.17656">Open-o3-Video-v2</a> raisonne à partir de preuves spatio-temporelles vérifiables. Il atteint mAM = 40.4 % et mLGM = 56.3 % sur V-STaR. En robotique, <a href="https://arxiv.org/abs/2610.10528v1">Long-WAM</a> allonge le contexte des modèles world-action et fait passer RoboCasa GR-1 de 63.3 % à 78.7 %.</p>
 <p>Mistral a deux actualités. L'entreprise lance <a href="https://mistral.ai/news/timestral/">Timestral</a>, sa première famille de modèles de fondation pour séries temporelles. Elle annonce la première place sur GIFT-Eval, TIME et fev-bench avec moins de paramètres que les modèles précédents, mais sans publier les scores. Mistral annonce aussi un <a href="https://mistral.ai/news/mistral-x-cloudera/">partenariat avec Cloudera</a> autour d'une IA souveraine pour les données d'entreprise. Sur le même créneau des séries temporelles, Birla AI Labs publie <a href="https://huggingface.co/birlaailabs/yug">Yug</a>, un modèle de forecasting zero-shot.</p>
@@ -72,9 +98,10 @@
 - <strong><a href="https://arxiv.org/abs/2610.23745v1">VocalGrad</a></strong> révèle des limites importantes de perception acoustique chez les modèles audio-langage (0.2 pour les humains contre 0.5 pour les LALMs).
 - <strong><a href="https://arxiv.org/abs/2610.10513v1">SciExam for ENSO</a></strong> teste si des agents peuvent construire des modèles climatiques d'El Niño à partir d'observations réelles.</p>
 <p>Enfin, <a href="https://www.modelscope.cn/models/IndexTeam/Index-Translate-2B">Index-Translate-2B</a> arrive sur ModelScope : un modèle de traduction en 150 langues qui suit des instructions de style et de structure.</p></div>
-    </details>
-    
-  </section>
+      </details>
+      
+    </section>
+  </div>
 
   <section id="top-domaine">
     <p class="benchmark-explication">
@@ -239,31 +266,6 @@
       <select id="select-model-review"><option value="">Toutes</option></select>
     </label>
     <div id="model-review-liste" class="model-review-liste"></div>
-  </section>
-
-  <section id="recherche">
-    <h2>Recherche</h2>
-    <p class="benchmark-explication">
-      Cherche dans toutes les synthèses archivées depuis leur mise en place (pas seulement les 3 dernières
-      affichées dans "Nouveautés"), par mot-clé et/ou par domaine.
-    </p>
-    <div class="recherche-controles">
-      <input type="search" id="recherche-texte" placeholder="Mot-clé (titre ou résumé)...">
-      <select id="recherche-domaine">
-        <option value="">Tous les domaines</option>
-        <option value="texte">Texte</option>
-        <option value="code">Code</option>
-        <option value="vision">Vision</option>
-        <option value="audio">Audio</option>
-        <option value="multimodal">Multimodal</option>
-        <option value="agents">Agents</option>
-        <option value="infra_outils">Infra / outils</option>
-        <option value="benchmarks">Benchmarks</option>
-        <option value="autre">Autre</option>
-      </select>
-    </div>
-    <p id="recherche-statut" class="benchmark-source"></p>
-    <div id="recherche-resultats" class="model-review-liste"></div>
   </section>
 
   <section id="sources">

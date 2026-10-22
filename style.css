@@ -3,6 +3,7 @@
   --fond-carte: #171a21;
   --texte: #e6e8eb;
   --texte-attenue: #9aa1ac;
+  --texte-nav: #c5cad2; /* même famille que --texte-attenue, éclaircie pour la lisibilité du bandeau */
   --accent: #5b8def;
   --bordure: #2a2e37;
   --ok: #3fb950;
@@ -82,7 +83,7 @@ nav {
 }
 
 nav a {
-  color: var(--texte-attenue);
+  color: var(--texte-nav);
   text-decoration: none;
   padding: 0.75rem 0;
   font-weight: 600;
@@ -104,6 +105,28 @@ main {
 }
 
 section { margin-bottom: 3rem; scroll-margin-top: var(--hauteur-entete); }
+
+/* Recherche affichée en premier, à côté de Nouveautés plutôt qu'au-dessus,
+   pour que la possibilité de chercher soit visible dès l'arrivée sur la page
+   sans pousser le digest plus bas. Repasse en pile sur écran étroit/tablette. */
+.recherche-nouveautes {
+  display: grid;
+  grid-template-columns: minmax(280px, 380px) 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+
+.recherche-nouveautes section {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .recherche-nouveautes {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
 
 .nouveaute-entree {
   border: 1px solid var(--bordure);
@@ -194,6 +217,7 @@ footer {
     --fond-carte: #f6f8fa;
     --texte: #1a1f26;
     --texte-attenue: #57606a;
+    --texte-nav: #57606a; /* contraste déjà correct sur fond clair, pas besoin d'éclaircir ici */
     --bordure: #d0d7de;
 
     /* Palette catégorielle (dataviz skill) — même ordre, light mode */
