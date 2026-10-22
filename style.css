@@ -1,7 +1,7 @@
 :root {
   --fond: #0f1115;
   --fond-carte: #171a21;
-  --fond-entete: #3f4144; /* --fond éclairci de 20% (mélange vers le blanc) */
+  --fond-entete: #21324b; /* couleur choisie directement par l'utilisateur (testée via site/dist/style.css) */
   --texte: #e6e8eb;
   --texte-attenue: #9aa1ac;
   --texte-nav: #c5cad2; /* même famille que --texte-attenue, éclaircie pour la lisibilité du bandeau */
