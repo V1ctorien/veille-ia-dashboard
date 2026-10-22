@@ -1,7 +1,7 @@
 :root {
   --fond: #0f1115;
   --fond-carte: #171a21;
-  --fond-entete: #122018; /* vert sombre désaturé, distinct de --fond et --fond-carte */
+  --fond-entete: #3f4144; /* --fond éclairci de 20% (mélange vers le blanc) */
   --texte: #e6e8eb;
   --texte-attenue: #9aa1ac;
   --texte-nav: #c5cad2; /* même famille que --texte-attenue, éclaircie pour la lisibilité du bandeau */
@@ -39,8 +39,8 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  /* Vert distinct de --fond (corps de page) et --fond-carte (cartes) : une
-     limite nette, pas juste une nuance de gris proche du reste de la page. */
+  /* Même teinte neutre que le reste de la page (pas une couleur d'accent),
+     mais un écart de 20% nettement visible — voir --fond-entete. */
   background: var(--fond-entete);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
@@ -221,7 +221,7 @@ footer {
   :root {
     --fond: #ffffff;
     --fond-carte: #f6f8fa;
-    --fond-entete: #e9f6ec; /* vert pâle, distinct de --fond et --fond-carte */
+    --fond-entete: #cccccc; /* --fond déjà blanc pur (ne peut pas être "plus clair") : assombri de 20% à la place, même écart visuel */
     --texte: #1a1f26;
     --texte-attenue: #57606a;
     --texte-nav: #57606a; /* contraste déjà correct sur fond clair, pas besoin d'éclaircir ici */
