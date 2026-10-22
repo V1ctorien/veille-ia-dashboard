@@ -43,7 +43,7 @@ body {
 
 header {
   padding: 1.25rem 1.5rem 1rem;
-  max-width: 860px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -72,7 +72,7 @@ h1 {
 .etat ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
 
 nav {
-  max-width: 860px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 1.5rem;
   display: flex;
@@ -91,9 +91,16 @@ nav a {
 nav a:hover { color: var(--accent); }
 
 main {
-  max-width: 860px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 1.5rem;
+}
+
+/* Le texte continu (digest narratif) reste large = difficile à lire ; les
+   sections en grille (benchmarks, cartes, tableau) profitent au contraire de
+   toute la largeur de .main ci-dessus. */
+.nouveaute-contenu {
+  max-width: 760px;
 }
 
 section { margin-bottom: 3rem; scroll-margin-top: var(--hauteur-entete); }
@@ -173,7 +180,7 @@ th, td {
 th { background: var(--fond-carte); }
 
 footer {
-  max-width: 860px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 1.5rem;
   color: var(--texte-attenue);
@@ -205,7 +212,9 @@ footer {
 
 .benchmarks-grille {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
   gap: 2rem;
+  align-items: start;
 }
 
 .benchmark-carte {
@@ -394,4 +403,50 @@ tr.statut-désactivée { opacity: 0.55; }
   width: 10px;
   height: 10px;
   border-radius: 50%;
+}
+
+/* Le tableau Sources ne doit pas casser la mise en page sur un écran étroit :
+   il défile horizontalement dans son propre conteneur plutôt que de forcer
+   toute la page à s'élargir. */
+.table-scroll {
+  overflow-x: auto;
+}
+
+@media (max-width: 640px) {
+  header, nav, main, footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  h1 { font-size: 1.4rem; }
+
+  nav {
+    gap: 0.9rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    padding: 0.6rem 0;
+  }
+
+  main {
+    padding-top: 1rem;
+  }
+
+  section { margin-bottom: 2rem; }
+
+  .benchmarks-grille,
+  .open-source-grille,
+  .model-review-liste {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .benchmark-carte,
+  .open-source-carte,
+  .model-review-carte {
+    padding: 1rem;
+  }
+
+  .benchmark-carte canvas { max-height: 280px; }
 }
