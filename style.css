@@ -325,6 +325,14 @@ footer {
   font-size: 0.9rem;
 }
 
+/* Défilement interne plutôt que de laisser la colonne Recherche s'étirer
+   bien plus bas que Nouveautés à côté dès qu'il y a beaucoup de résultats. */
+#recherche-resultats {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
 .open-source-carte {
   background: var(--fond-carte);
   border: 1px solid var(--bordure);
