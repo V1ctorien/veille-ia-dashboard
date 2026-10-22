@@ -129,10 +129,11 @@ section { margin-bottom: 3rem; scroll-margin-top: var(--hauteur-entete); }
   display: grid;
   grid-template-columns: minmax(280px, 380px) 1fr;
   gap: 2rem;
-  /* align-items reste "stretch" (valeur par défaut, pas start) : la colonne
-     Recherche prend exactement la même hauteur que Nouveautés à côté, au
-     lieu d'un chiffre fixe arbitraire — Recherche défile dans ce qu'il lui
-     reste comme hauteur (voir #recherche / #recherche-resultats). */
+  /* align-items: start, pas stretch — la grille seule ne peut pas borner
+     Recherche à la hauteur de Nouveautés (testé : stretch agrandit la ligne
+     de grille pour loger tout le contenu de Recherche au lieu de le faire
+     défiler). La hauteur réelle est imposée en JS, voir ajusterHauteurRecherche. */
+  align-items: start;
   margin-bottom: 3rem;
 }
 
@@ -143,6 +144,11 @@ section { margin-bottom: 3rem; scroll-margin-top: var(--hauteur-entete); }
 #recherche {
   display: flex;
   flex-direction: column;
+  /* max-height posée dynamiquement en JS (ajusterHauteurRecherche), égale à
+     la hauteur réelle de #nouveautes. overflow: hidden pour que ça borne
+     vraiment (sinon max-height seul n'empêche pas le contenu de déborder
+     visuellement) — le défilement réel a lieu dans #recherche-resultats. */
+  overflow: hidden;
 }
 
 @media (max-width: 900px) {

@@ -846,6 +846,33 @@
   ajusterHauteurEntete();
   window.addEventListener('resize', ajusterHauteurEntete);
 
+  // Recherche doit occuper exactement la même hauteur que Nouveautés à côté
+  // (pas dépasser dessous) : CSS seul ne peut pas borner un bloc à la hauteur
+  // naturelle d'un voisin plus court quand son propre contenu est plus grand
+  // (testé : align-items: stretch sur la grille ne suffit pas, la ligne de
+  // grille s'agrandit pour loger tout le contenu de Recherche au lieu de le
+  // faire défiler) — la hauteur de Nouveautés est donc mesurée en JS et
+  // appliquée explicitement comme hauteur maximale de Recherche.
+  function ajusterHauteurRecherche() {
+    const nouveautes = document.getElementById('nouveautes');
+    const recherche = document.getElementById('recherche');
+    if (!nouveautes || !recherche) return;
+    // Sous 900px, la grille repasse en 1 colonne (voir CSS) : les deux blocs
+    // s'empilent, pas besoin (ni souhaitable) de borner la hauteur de Recherche.
+    if (window.innerWidth <= 900) {
+      recherche.style.maxHeight = '';
+      return;
+    }
+    recherche.style.maxHeight = `${nouveautes.offsetHeight}px`;
+  }
+  ajusterHauteurRecherche();
+  window.addEventListener('resize', ajusterHauteurRecherche);
+  // La hauteur de Nouveautés change quand on déplie/replie une exécution
+  // précédente (accordéon <details>) : réajuster à ce moment-là aussi.
+  document.querySelectorAll('#nouveautes details').forEach(d => {
+    d.addEventListener('toggle', ajusterHauteurRecherche);
+  });
+
   function couleurSerie(slot) {
     const style = getComputedStyle(document.documentElement);
     return slot > 0 ? style.getPropertyValue(`--serie-${slot}`).trim() : style.getPropertyValue('--serie-autre').trim();
