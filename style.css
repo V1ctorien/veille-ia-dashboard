@@ -333,6 +333,27 @@ footer {
   padding-right: 0.5rem;
 }
 
+/* Hauteur fixe par carte (titre + méta toujours visibles en entier), et le
+   résumé défile dans son propre espace plutôt que d'étirer la carte — pour
+   que toutes les cartes de résultats gardent la même taille entre elles. */
+.recherche-carte {
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+}
+
+.recherche-carte h4,
+.recherche-carte .sortie-meta {
+  flex-shrink: 0;
+}
+
+.recherche-resume {
+  margin: 0.5rem 0 0;
+  overflow-y: auto;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
 .open-source-carte {
   background: var(--fond-carte);
   border: 1px solid var(--bordure);
