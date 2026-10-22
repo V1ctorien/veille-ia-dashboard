@@ -129,12 +129,20 @@ section { margin-bottom: 3rem; scroll-margin-top: var(--hauteur-entete); }
   display: grid;
   grid-template-columns: minmax(280px, 380px) 1fr;
   gap: 2rem;
-  align-items: start;
+  /* align-items reste "stretch" (valeur par défaut, pas start) : la colonne
+     Recherche prend exactement la même hauteur que Nouveautés à côté, au
+     lieu d'un chiffre fixe arbitraire — Recherche défile dans ce qu'il lui
+     reste comme hauteur (voir #recherche / #recherche-resultats). */
   margin-bottom: 3rem;
 }
 
 .recherche-nouveautes section {
   margin-bottom: 0;
+}
+
+#recherche {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 900px) {
@@ -325,33 +333,14 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Défilement interne plutôt que de laisser la colonne Recherche s'étirer
-   bien plus bas que Nouveautés à côté dès qu'il y a beaucoup de résultats. */
+/* Remplit exactement la hauteur restante dans #recherche (lui-même étiré à
+   la hauteur de Nouveautés à côté par la grille) et défile en interne —
+   pas de chiffre fixe arbitraire, la taille suit celle de Nouveautés. */
 #recherche-resultats {
-  max-height: 70vh;
-  overflow-y: auto;
-  padding-right: 0.5rem;
-}
-
-/* Hauteur fixe par carte (titre + méta toujours visibles en entier), et le
-   résumé défile dans son propre espace plutôt que d'étirer la carte — pour
-   que toutes les cartes de résultats gardent la même taille entre elles. */
-.recherche-carte {
-  height: 190px;
-  display: flex;
-  flex-direction: column;
-}
-
-.recherche-carte h4,
-.recherche-carte .sortie-meta {
-  flex-shrink: 0;
-}
-
-.recherche-resume {
-  margin: 0.5rem 0 0;
-  overflow-y: auto;
   flex: 1 1 auto;
   min-height: 0;
+  overflow-y: auto;
+  padding-right: 0.5rem;
 }
 
 .open-source-carte {

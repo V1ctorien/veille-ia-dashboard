@@ -1077,10 +1077,10 @@
         return;
       }
       conteneur.innerHTML = resultats.map(it => `
-        <div class="model-review-carte recherche-carte">
+        <div class="model-review-carte">
           <h4><a href="${it.url}" target="_blank" rel="noopener">${it.titre}</a></h4>
           <p class="sortie-meta">${LIBELLES_DOMAINE[it.domaine] || it.domaine} · ${it.source} · ${new Date(it.date).toLocaleDateString('fr-FR')}</p>
-          <p class="recherche-resume">${it.resume}</p>
+          <p>${it.resume}</p>
         </div>
       `).join('');
     }
