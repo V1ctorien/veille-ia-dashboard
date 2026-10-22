@@ -24,6 +24,7 @@
   <a href="#benchmarks">Benchmarks</a>
   <a href="#open-source">Open source</a>
   <a href="#model-review">Model Review</a>
+  <a href="#recherche">Recherche</a>
   <a href="#sources">Sources</a>
 </nav>
 </div>
@@ -238,6 +239,31 @@
       <select id="select-model-review"><option value="">Toutes</option></select>
     </label>
     <div id="model-review-liste" class="model-review-liste"></div>
+  </section>
+
+  <section id="recherche">
+    <h2>Recherche</h2>
+    <p class="benchmark-explication">
+      Cherche dans toutes les synthèses archivées depuis leur mise en place (pas seulement les 3 dernières
+      affichées dans "Nouveautés"), par mot-clé et/ou par domaine.
+    </p>
+    <div class="recherche-controles">
+      <input type="search" id="recherche-texte" placeholder="Mot-clé (titre ou résumé)...">
+      <select id="recherche-domaine">
+        <option value="">Tous les domaines</option>
+        <option value="texte">Texte</option>
+        <option value="code">Code</option>
+        <option value="vision">Vision</option>
+        <option value="audio">Audio</option>
+        <option value="multimodal">Multimodal</option>
+        <option value="agents">Agents</option>
+        <option value="infra_outils">Infra / outils</option>
+        <option value="benchmarks">Benchmarks</option>
+        <option value="autre">Autre</option>
+      </select>
+    </div>
+    <p id="recherche-statut" class="benchmark-source"></p>
+    <div id="recherche-resultats" class="model-review-liste"></div>
   </section>
 
   <section id="sources">
@@ -1011,6 +1037,68 @@
     selectMR.addEventListener('change', dessinerMR);
     dessinerMR();
   }
+
+  // --- Recherche par thématique dans toutes les synthèses archivées ---
+  // Index chargé à part (pas intégré au HTML) et seulement au premier besoin,
+  // pour ne pas alourdir le chargement initial de la page avec potentiellement
+  // des centaines d'items archivés au fil du temps.
+  (function () {
+    const champTexte = document.getElementById('recherche-texte');
+    const champDomaine = document.getElementById('recherche-domaine');
+    const conteneur = document.getElementById('recherche-resultats');
+    const statut = document.getElementById('recherche-statut');
+    if (!champTexte || !champDomaine || !conteneur) return;
+
+    const LIBELLES_DOMAINE = {
+      texte: 'Texte', code: 'Code', vision: 'Vision', audio: 'Audio',
+      multimodal: 'Multimodal', agents: 'Agents', infra_outils: 'Infra / outils',
+      benchmarks: 'Benchmarks', autre: 'Autre',
+    };
+
+    let index = null;
+    let chargementLance = false;
+
+    function dessinerResultats() {
+      if (!index) return;
+      const motCle = champTexte.value.trim().toLowerCase();
+      const domaine = champDomaine.value;
+      const resultats = index.filter(it => {
+        if (domaine && it.domaine !== domaine) return false;
+        if (motCle && !(`${it.titre} ${it.resume}`.toLowerCase().includes(motCle))) return false;
+        return true;
+      }).slice(0, 100);
+
+      statut.textContent = `${resultats.length}${resultats.length === 100 ? '+' : ''} résultat(s) sur ${index.length} item(s) archivé(s)`;
+
+      if (!resultats.length) {
+        conteneur.innerHTML = '<p class="open-source-vide">Aucun résultat.</p>';
+        return;
+      }
+      conteneur.innerHTML = resultats.map(it => `
+        <div class="model-review-carte">
+          <h4><a href="${it.url}" target="_blank" rel="noopener">${it.titre}</a></h4>
+          <p class="sortie-meta">${LIBELLES_DOMAINE[it.domaine] || it.domaine} · ${it.source} · ${new Date(it.date).toLocaleDateString('fr-FR')}</p>
+          <p>${it.resume}</p>
+        </div>
+      `).join('');
+    }
+
+    function chargerIndex() {
+      if (chargementLance) return;
+      chargementLance = true;
+      statut.textContent = 'Chargement de l\'index de recherche...';
+      fetch('recherche.json')
+        .then(r => r.json())
+        .then(data => { index = data; dessinerResultats(); })
+        .catch(() => { statut.textContent = "Index de recherche indisponible pour l'instant."; });
+    }
+
+    champTexte.addEventListener('input', () => { chargerIndex(); dessinerResultats(); });
+    champDomaine.addEventListener('change', () => { chargerIndex(); dessinerResultats(); });
+    // Charge aussi dès l'ouverture de l'onglet (clic sur le lien de nav),
+    // pas seulement à la première frappe/sélection.
+    document.querySelector('a[href="#recherche"]')?.addEventListener('click', chargerIndex);
+  })();
 
   // --- Dates de collecte sur chaque carte de benchmark ---
   function afficherDate(idSpan, iso) {

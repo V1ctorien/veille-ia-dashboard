@@ -258,6 +258,32 @@ footer {
   gap: 1.5rem;
 }
 
+.recherche-controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.recherche-controles input[type="search"] {
+  flex: 1 1 260px;
+  background: var(--fond);
+  color: var(--texte);
+  border: 1px solid var(--bordure);
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.recherche-controles select {
+  background: var(--fond);
+  color: var(--texte);
+  border: 1px solid var(--bordure);
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+}
+
 .open-source-carte {
   background: var(--fond-carte);
   border: 1px solid var(--bordure);
